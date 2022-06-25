@@ -10,6 +10,7 @@
     <script src="/lib/js/jquery-3.6.0.min.js"></script>
     <script src="/lib/js/bootstrap.min.js"></script>
     <script src="/lib/js/uikit.min.js"></script>
+    <script src="/lib/js/uikit-icons.min.js"></script>
     <!-- スタイルシートはココに入れる -->
     <link rel="stylesheet" type="text/css" href="/lib/css/uikit.min.css">
     <link rel="stylesheet" type="text/css" href="/lib/css/uikit-rtl.min.css">
@@ -20,13 +21,17 @@
 <body>    
     <main>
         <div id="top-page" class="current">
-            <div class="title-area">
-                <label class="application-name">セットリストメーカー</label>
+            <div id="title-area">
+                <label class="application-name center-middle">セットリストメーカー</label>
             </div>
-            <button>作成する</button>
+            <button id="make-btn" class="uk-button"><span uk-icon="pencil"></span>作成する</button>
         </div>
-        <div class="advertisement-bar">
-            <img>
+        <div id="advertisement-area">
+            <div id="advertisement-link" class="center-middle uk-background-muted">
+                <a>
+                    <img src="">
+                </a>
+            </div> 
         </div>
     </main>
     <footer>
