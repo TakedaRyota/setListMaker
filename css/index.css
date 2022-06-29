@@ -1,12 +1,10 @@
-/* このファイルはindex.htmlに適用するスタイルシート */
+/* ==========================================
+このファイルはindex.htmlに適用するスタイルシート 
+============================================= */
 
-/* --- 全体 --- */
 html,
 body {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: #c6f3ff;
+    height: 100vh;
 }
 main {
     width: 100%;
@@ -25,11 +23,6 @@ main {
     width: 90%;
     margin: 0 5%;
 }
-#make-btn:focus {
-    border-color: #b1ffa9;
-    outline: 0;
-    box-shadow: 0 0 0 0.3rem #78ff69b0;
-}
 #advertisement-area {
     width: 100%;
     height: 40%;
@@ -47,26 +40,4 @@ main {
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
     -webkit-transform: translateY(-50%) translateX(-50%);
-}
-/* --- Copyright --- */
-footer {
-    width: 100%;
-    height: 16px;
-    text-align: center;
-    vertical-align: middle;
-}
-.copyrights {
-    color: black;
-    font-size: 8pt;
-}
-
-@media (min-width: 1200px) {
-    body {
-        margin: 0 10vw;
-    }
-    main,
-    footer {
-        width: 80%;
-    }
-    
 }

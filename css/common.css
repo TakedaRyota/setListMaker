@@ -1,0 +1,32 @@
+/* ==========================================
+このファイルは全ての画面に適用するスタイルシート 
+============================================= */
+
+/* --- 全体 --- */
+html,
+body {
+    width: 100%;
+    overflow: hidden;
+    background-color: #c6f3ff;
+}
+/* --- Copyright --- */
+footer {
+    width: 100%;
+    height: 16px;
+    text-align: center;
+    vertical-align: middle;
+}
+.copyrights {
+    color: black;
+    font-size: 8pt;
+}
+
+@media (min-width: 1200px) {
+    body {
+        margin: 0 10vw;
+    }
+    main,
+    footer {
+        width: 80%;
+    }
+}

@@ -4,28 +4,41 @@
     <meta charset="UTF-8">
     <title>セットリストメーカー</title>
     <!--このファイルはフォーム入力画面-->
-
-    <link href="bootstrap-5.0.0-beta1-dist/css/bootstrap.min.css">
-    
+    <!--ファビコン-->
+    <link rel="icon" href="favicon.ico">
+    <!--このファイルはトップ画面のみ-->
     <script src="/lib/js/jquery-3.6.0.min.js"></script>
     <script src="/lib/js/bootstrap.min.js"></script>
     <script src="/lib/js/uikit.min.js"></script>
+    <script src="/lib/js/uikit-icons.min.js"></script>
+    <script src="/lib/js/icheck.min.js"></script>
+    <script src="/lib/js/jquery.fs.selecter.min.js"></script>
+    <script src="/lib/js/jquery.fs.stepper.min.js"></script>
     <!-- スタイルシートはココに入れる -->
     <link rel="stylesheet" type="text/css" href="/lib/css/uikit.min.css">
     <link rel="stylesheet" type="text/css" href="/lib/css/uikit-rtl.min.css">
     <link rel="stylesheet" type="text/css" href="/lib/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/lib/css/bootflat.min.css">
     <!-- 画面ごとのCSS -->
+    <link rel="stylesheet" type="text/css" href="/css/common.css">
     <link rel="stylesheet" type="text/css" href="/css/form.css">
 </head>
 <body>    
     <main>
-        <!-- 概要フォーム -->
-        <div id="form-top" class="current">
-            
+        <!-- フォームエリア -->
+        <div id="form-area">
+            <!-- 概要フォーム -->
+            <div id="form-top" class="current">
+                <div class="input-label"></div>
+            </div>
+            <!-- 曲詳細フォーム -->
+            <div id="form-music-list" class="">
+                
+            </div>
         </div>
-        <!-- 曲詳細フォーム -->
-        <div id="form-music-list" class="">
-            
+        <!-- 操作ボタンエリア -->
+        <div id="btn-area">
+
         </div>
     </main>
     <footer>
