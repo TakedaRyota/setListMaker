@@ -6,7 +6,7 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: #acedff;
+    background-color: #c6f3ff;
 }
 main {
     width: 100%;
@@ -24,10 +24,6 @@ main {
 #make-btn {
     width: 90%;
     margin: 0 5%;
-    background-color: #79ff6a;
-}
-#make-btn:hover {
-    background-color: #b1ffa9;
 }
 #make-btn:focus {
     border-color: #b1ffa9;
