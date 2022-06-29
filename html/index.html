@@ -10,23 +10,32 @@
     <script src="/lib/js/jquery-3.6.0.min.js"></script>
     <script src="/lib/js/bootstrap.min.js"></script>
     <script src="/lib/js/uikit.min.js"></script>
+    <script src="/lib/js/uikit-icons.min.js"></script>
+    <script src="/lib/js/icheck.min.js"></script>
+    <script src="/lib/js/jquery.fs.selecter.min.js"></script>
+    <script src="/lib/js/jquery.fs.stepper.min.js"></script>
     <!-- スタイルシートはココに入れる -->
     <link rel="stylesheet" type="text/css" href="/lib/css/uikit.min.css">
     <link rel="stylesheet" type="text/css" href="/lib/css/uikit-rtl.min.css">
     <link rel="stylesheet" type="text/css" href="/lib/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/lib/css/bootflat.min.css">
     <!-- 画面ごとのCSS -->
     <link rel="stylesheet" type="text/css" href="/css/index.css">
 </head>
 <body>    
     <main>
         <div id="top-page" class="current">
-            <div class="title-area">
-                <label class="application-name">セットリストメーカー</label>
+            <div id="title-area">
+                <label class="application-name center-middle">セットリストメーカー</label>
             </div>
-            <button>作成する</button>
+            <button id="make-btn" class="btn btn-info"><span uk-icon="pencil"></span>作成する</button>
         </div>
-        <div class="advertisement-bar">
-            <img>
+        <div id="advertisement-area">
+            <div id="advertisement-link" class="center-middle bg-light">
+                <a>
+                    <img src="">
+                </a>
+            </div> 
         </div>
     </main>
     <footer>
