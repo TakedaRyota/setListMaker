@@ -14,11 +14,18 @@
     <script src="/lib/js/icheck.min.js"></script>
     <script src="/lib/js/jquery.fs.selecter.min.js"></script>
     <script src="/lib/js/jquery.fs.stepper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <!-- 画面ごとのjs -->
+    <script src="/js/form.js"></script>
+    <script src="/js/calendar.js"></script>
     <!-- スタイルシートはココに入れる -->
     <link rel="stylesheet" type="text/css" href="/lib/css/uikit.min.css">
     <link rel="stylesheet" type="text/css" href="/lib/css/uikit-rtl.min.css">
     <link rel="stylesheet" type="text/css" href="/lib/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/lib/css/bootflat.min.css">
+    <link rel="stylesheet" type="text/css" href="/lib/css/site.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <!-- 画面ごとのCSS -->
     <link rel="stylesheet" type="text/css" href="/css/common.css">
     <link rel="stylesheet" type="text/css" href="/css/form.css">
@@ -29,16 +36,45 @@
         <div id="form-area">
             <!-- 概要フォーム -->
             <div id="form-top" class="current">
-                <div class="input-label"></div>
+                <div class="form-title">概要入力フォーム</div>
+                <div class="input-area bg-light">
+                    <div class="input-label">イベント名</div>
+                    <input class="form-control" type="text" placeholder="イベント名/催事名">
+                    <div class="input-label">会場名</div>
+                    <input class="form-control" type="text" placeholder="会場名">
+                    <div class="input-label">開催日</div>
+                    <input id="calendar" class="form-control" type="date">
+                    <div class="input-label">アーティスト名</div>
+                    <input class="form-control" type="text">
+                    <div class="input-label">持ち時間</div>
+                    <input class="form-control" type="text">
+                    <div class="input-label">メンバー数</div>
+                    <input class="form-control" type="text">
+                    <div class="input-label">マイク使用本数</div>
+                    <input class="form-control" type="text">
+                </div>
+                
             </div>
             <!-- 曲詳細フォーム -->
-            <div id="form-music-list" class="">
+            <div id="form-music-list">
+                <div class="form-title">曲詳細入力フォーム</div>
+                <div class="input-area bg-light current">
+                    <div class="input-label">トラック番号</div>
+                    <div class="stepper">
+                        <input class="form-control stepper-input" type="number">
+                        <span class="stepper-arrow up"></span>
+                        <span class="stepper-arrow down"></span>
+                    </div>
+                </div>
                 
             </div>
         </div>
         <!-- 操作ボタンエリア -->
         <div id="btn-area">
-
+            <button id="back-btn" class="btn btn-success">前へ</button>
+            <button id="next-btn" class="btn btn-success">次へ</button>
+            <button id="music-edit-btn" class="btn btn-success">曲リスト編集</button>
+            <button id="complete-btn" class="btn btn-info">完了</button>
         </div>
     </main>
     <footer>
