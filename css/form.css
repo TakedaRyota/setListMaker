@@ -1,19 +1,182 @@
-/* form.htmlに適用するスタイルシート */
+/* ==========================================
+form.htmlに適用するスタイルシート
+============================================= */
 
-/* --- 全体 --- */
 html,
 body {
-    width: 100%;
     height: auto;
+    position: relative;
+}
+body {
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
 }
 
-/* --- Copyright --- */
+main {
+    margin: 10px 5vw;
+    padding: 10px;
+}
 footer {
+    position: absolute;
+    bottom: 0;
+}
+a,
+.has-feedback > .glyphicon {
+    display: block;
+}
+#form-top-view,
+#music-title-list-view,
+#music-detail-view,
+#other-comment-view,
+.glyphicon  {
+    display: none;
+}
+.save-btn {
+    margin-left: auto;
+}
+.no-head {
+    width: 20px;
+}
+.list-icon {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+}
+.list-icon > svg {
+    width: 50px;
+    height: 50px;
+}
+.input-area {
+    min-width: 300px;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px 0rem gray;
+}
+.form-title {
     width: 100%;
     height: fit-content;
+    padding: 10px 0;
     text-align: center;
 }
-.copyrights {
-    color: black;
-    font-size: 8pt;
+.form-title {
+    display: block !important;
+}
+/* --- Chrome, Safari対応 --- */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* --- FireFox対応 --- */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+/* --- ボタン --- */
+#complete-btn,
+#open-music-title-form,
+#other-form-btn,
+#open-form-top-btn {
+    width: 100%;
+    position: relative;
+    text-align: left;
+}
+/* --- 表示していることを示す --- */
+.input-area-show {
+    display: block;
+}
+/* --- リスト番号 --- */
+.bg-pink {
+    background-color: #EC87C0;
+}
+.list-no {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: relative;
+}
+.list-no > span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    color: #ffffff;
+}
+/*  --- 追加削除アイコン --- */
+#edit-btn-area {
+    position: relative;
+}
+#remove-btn {
+    margin-left: auto;
+}
+.detail-view-btn {
+    position: relative;
+}
+.detail-view-btn>.remove-btn {
+    display: none;
+    position: absolute;
+    bottom: -20px;
+}
+table > thead > tr > th {
+    background-color: #bcb6ff !important;
+}
+.badge-ok {
+    display: none;
+    color: #ff0000 !important;
+    position: absolute !important;
+    top: 50% !important;
+    right: 5px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+}
+.input-number {
+    width: 150px;
+    min-width: 150px;
+}
+.badge-danger {
+    background-color: #da4453 !important;
+    color: #ffffff !important;
+    font-size: 20pt;
+}
+
+@media (max-width: 1000px) {
+    main {
+        margin: 0 5px;
+    }
+    .input-area {
+        min-width: 300px;
+    }
+    .form-title {
+        font-size: 40pt;
+        font-weight: bold;
+    }
+    .form-control {
+        min-height: 80px;
+        font-size: 25pt;
+    }
+    .btn-plus,
+    .btn-minus,
+    #add-music-btn {
+        width: 80px;
+        height: 80px;
+    }
+    .input-label {
+        font-size: 20pt;
+    }
+    .form-control-feedback {
+        line-height: 80px;
+    }
+    table {
+        font-size: 25pt;
+    }
+    .btn > span > svg {
+        width: 50px;
+        height: 50px;
+    }
+    .badge-ok {
+        font-size: 20pt;
+    }
 }
