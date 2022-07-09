@@ -10,20 +10,20 @@ main {
     margin: 10px 5vw;
     padding: 10px;
 }
-#form-music-list {
+#form-music-list,
+#complete-btn,
+#overview-btn,
+#back-btn,
+#next-btn,
+#sort-form-btn {
     display: none;
 }
 .input-area {
+    min-width: 300px;
     padding: 10px;
-    margin: 0 0 10px 0;
+    margin: 5px;
     border-radius: 5px;
-    box-shadow: 2px 2px 10px 0rem gray;
-}
-#form-music-list > * {
-    display: none;
-}
-#form-music-list > div.current {
-    display: block;
+    box-shadow: 1px 1px 2px 0rem gray;
 }
 .form-title {
     width: 100%;
@@ -31,14 +31,50 @@ main {
     padding: 10px 0;
     text-align: center;
 }
-.stepper {
+.form-title {
+    display: block !important;
+}
+/* --- Chrome, Safari対応 --- */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* --- FireFox対応 --- */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+/* --- 完了ボタン --- */
+#complete-btn {
+    width: 100%;
+}
+.slider {
+    display: none;
+}
+.slider.slick-initialized {
+    display: block;
+}
+/* --- リスト番号 --- */
+.bg-pink {
+    background-color: #EC87C0;
+}
+.list-no {
+    text-align: center;
+}
+/*  --- 追加削除アイコン --- */
+#edit-btn-area {
     position: relative;
 }
-.stepper-arrow.up {
-    top: 0;
-    right: 0;
+#remove-btn {
+    margin-left: auto;
 }
-.stepper-arrow.down {
-    bottom: 0;
-    right: 0;
+
+@media (max-width: 1000px) {
+    main {
+        margin: 0 5px;
+        padding: 0;
+    }
+    .input-area {
+        min-width: 300px;
+    }
 }
