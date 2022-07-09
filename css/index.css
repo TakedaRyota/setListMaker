@@ -4,12 +4,13 @@
 
 html,
 body {
-    height: 100vh;
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
     overflow: hidden;
 }
 main {
     width: 100%;
-    height: calc(100% - 16px);
+    height: calc(var(--vh, 1vh) * 100);
 }
 #top-page {
     width: 100%;

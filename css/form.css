@@ -9,6 +9,7 @@ body {
 }
 body {
     min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
     padding-bottom: 20px;
 }
 
@@ -72,6 +73,7 @@ input[type="number"] {
 #open-form-top-btn {
     width: 100%;
     position: relative;
+    text-align: left;
 }
 /* --- 表示していることを示す --- */
 .input-area-show {
@@ -118,17 +120,43 @@ table > thead > tr > th {
     color: #ff0000 !important;
     position: absolute !important;
     top: 50% !important;
-    left: 5px;
+    right: 5px;
     transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
+}
+.input-number {
+    width: 150px;
+    min-width: 150px;
 }
 
 @media (max-width: 1000px) {
     main {
         margin: 0 5px;
-        padding: 0;
     }
     .input-area {
         min-width: 300px;
+    }
+    .btn {
+        min-height: 80px;
+        font-size: 20pt;
+    }
+    .form-title {
+        font-size: 25pt;
+        font-weight: bold;
+    }
+    .form-control {
+        min-height: 80px;
+        font-size: 25pt;
+    }
+    .btn-plus,
+    .btn-minus {
+        width: 80px;
+        height: 80px;
+    }
+    .input-label {
+        font-size: 20pt;
+    }
+    .form-control-feedback {
+        line-height: 80px;
     }
 }

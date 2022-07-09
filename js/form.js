@@ -11,6 +11,10 @@ $(function () {
     const $musicListTable = $('#music-list-table'); // 曲目リスト
     const $musicCards = $('#music-cards'); // 曲詳細カード
 
+    /* 高さvhの調整 */
+    const vh = $(window).height() * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
     /**
      * 概要入力ボタン押下時
      */

@@ -51,7 +51,7 @@ $(function () {
                     <button class="btn btn-normal btn-minus" type="button">
                         <span uk-icon="icon: minus"></span>
                     </button>
-                    <input class="form-control" type="number" min="0" max="100"/>
+                    <input class="form-control input-number" type="number" min="0" max="100"/>
                     <button class="btn btn-normal btn-plus" type="button">
                         <span uk-icon="icon: plus"></span>
                     </button>

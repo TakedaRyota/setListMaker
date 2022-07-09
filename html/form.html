@@ -36,18 +36,18 @@
         <!-- メイン画面 -->
         <div id="form-index">
             <div class="form-title">セットリストの作成</div>
-            <button id="open-form-top-btn" class="btn btn-success mb-2">概要入力
-                <span class="badge">必須</span>
+            <button id="open-form-top-btn" class="btn btn-success mb-3">概要入力
+                <span class="badge badge-danger">必須</span>
                 <span class="badge badge-ok">OK</span>
             </button>
-            <button id="open-music-title-form" class="btn btn-success mb-2">セットリスト入力
-                <span class="badge">必須</span>
+            <button id="open-music-title-form" class="btn btn-success mb-3">セットリスト入力
+                <span class="badge badge-danger">必須</span>
                 <span class="badge badge-ok">OK</span>
             </button>
-            <button id="other-form-btn" class="btn btn-success mb-3">その他入力
+            <button id="other-form-btn" class="btn btn-success mb-4">その他入力
                 <span class="badge badge-ok">OK</span>
             </button>
-            <button id="complete-btn" class="btn btn-warning mb-3">完了</button>
+            <button id="complete-btn" class="btn btn-warning">完了</button>
         </div>
 
         <!-- 概要フォーム -->
@@ -80,7 +80,7 @@
                     <button class="btn btn-minus" type="button">
                         <span uk-icon="icon: minus"></span>
                     </button>
-                    <input class="form-control" type="number" min="0" max="100"/>
+                    <input class="form-control input-number" type="number" min="0" max="100"/>
                     <button class="btn btn-plus" type="button">
                         <span uk-icon="icon: plus"></span>
                     </button>
@@ -90,7 +90,7 @@
                     <button class="btn btn-normal btn-minus" type="button">
                         <span uk-icon="icon: minus"></span>
                     </button>
-                    <input class="form-control" type="number" min="0" max="100"/>
+                    <input class="form-control input-number" type="number" min="0" max="100"/>
                     <button class="btn btn-normal btn-plus" type="button">
                         <span uk-icon="icon: plus"></span>
                     </button>
