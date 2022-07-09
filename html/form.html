@@ -18,6 +18,9 @@
     <!-- 画面ごとのjs -->
     <script src="../js/form.js"></script>
     <script src="../js/calendar.js"></script>
+    <script src="../js/form_top.js"></script>
+    <script src="../js/list_form.js"></script>
+    <script src="../js/comment_form.js"></script>
     <!-- スタイルシートはココに入れる -->
     <link rel="stylesheet" type="text/css" href="../lib/css/uikit.min.css">
     <link rel="stylesheet" type="text/css" href="../lib/css/uikit-rtl.min.css">
@@ -35,12 +38,16 @@
             <div class="form-title">セットリストの作成</div>
             <button id="open-form-top-btn" class="btn btn-success mb-2">概要入力
                 <span class="badge">必須</span>
+                <span class="badge badge-ok">OK</span>
             </button>
             <button id="open-music-title-form" class="btn btn-success mb-2">セットリスト入力
                 <span class="badge">必須</span>
+                <span class="badge badge-ok">OK</span>
             </button>
-            <button id="other-form-btn" class="btn btn-success mb-3">その他入力</button>
-            <button id="complete-btn" class="btn btn-success mb-3" disabled>完了</button>
+            <button id="other-form-btn" class="btn btn-success mb-3">その他入力
+                <span class="badge badge-ok">OK</span>
+            </button>
+            <button id="complete-btn" class="btn btn-warning mb-3">完了</button>
         </div>
 
         <!-- 概要フォーム -->
@@ -56,11 +63,18 @@
                 <div class="input-label">アーティスト名
                     <span class="badge badge-danger">必須</span>
                 </div>
-                <input class="form-control mb-2" type="text" required>
+                <div class="">
+                    <input class="form-control mb-2 artist-name" type="text" required>
+                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                </div>
                 <div class="input-label">演奏時間
                     <span class="badge badge-danger">必須</span>
                 </div>
-                <input class="form-control mb-2" type="text"/>
+                <div class="">
+                    <input class="playing-total-time form-control mb-2" type="text"/>
+                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                </div>
+                
                 <div class="input-label">メンバー数</div>
                 <div class="d-flex mb-2">
                     <button class="btn btn-minus" type="button">
@@ -83,7 +97,7 @@
                 </div>
             </div>
             <div class="d-flex">
-                <button id="form-top-save-btn" class="save-btn btn btn-success" type="submit">保存</button>
+                <button id="form-top-save-btn" class="save-btn btn btn-success" type="button">保存</button>
             </div>
         </form>
 
@@ -91,7 +105,10 @@
         <div id="music-title-list-view">
             <div class="form-title">曲順リスト</div>
             <div class="input-group mb-2">
-                <input type="text" id="music-title-form" class="form-control" placeholder="曲のタイトル,MC"/>
+                <div class="">
+                    <input type="text" id="music-title-form" class="form-control" placeholder="曲のタイトル,MC"/>
+                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                </div>
                 <div class="input-group-btn">
                     <button type="submit" id="add-music-btn" class="btn btn-danger">
                         <span uk-icon="icon: plus-circle" style="width: 18px;"></span>
@@ -115,7 +132,7 @@
                 </div>
             </div>
             <div class="d-flex">
-                <button class="save-btn btn btn-success">保存</button>
+                <button id="set-list-save-btn" class="save-btn btn btn-success">保存</button>
             </div>
         </div>
 
@@ -135,7 +152,7 @@
             <div class="form-title">その他自由記載欄</div>
             <textarea class="form-control mb-2" rows="6" placeholder="ご自由に入力してください。"></textarea>
             <div class="d-flex">
-                <button class="save-btn btn btn-success">保存</button>
+                <button id="other-comment-save-btn" class="save-btn btn btn-success">保存</button>
             </div>
         </div>
 

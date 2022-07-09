@@ -71,6 +71,7 @@ input[type="number"] {
 #other-form-btn,
 #open-form-top-btn {
     width: 100%;
+    position: relative;
 }
 /* --- 表示していることを示す --- */
 .input-area-show {
@@ -111,6 +112,15 @@ input[type="number"] {
 }
 table > thead > tr > th {
     background-color: #bcb6ff !important;
+}
+.badge-ok {
+    display: none;
+    color: #ff0000 !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 5px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
 }
 
 @media (max-width: 1000px) {
