@@ -10,7 +10,6 @@ body {
 body {
     min-height: 100vh;
     min-height: calc(var(--vh, 1vh) * 100);
-    padding-bottom: 20px;
 }
 
 main {
@@ -21,7 +20,8 @@ footer {
     position: absolute;
     bottom: 0;
 }
-a {
+a,
+.has-feedback > .glyphicon {
     display: block;
 }
 #form-top-view,
@@ -136,6 +136,11 @@ table > thead > tr > th {
     width: 150px;
     min-width: 150px;
 }
+.badge-danger {
+    background-color: #da4453 !important;
+    color: #ffffff !important;
+    font-size: 20pt;
+}
 
 @media (max-width: 1000px) {
     main {
@@ -144,12 +149,8 @@ table > thead > tr > th {
     .input-area {
         min-width: 300px;
     }
-    .btn {
-        min-height: 80px;
-        font-size: 20pt;
-    }
     .form-title {
-        font-size: 25pt;
+        font-size: 40pt;
         font-weight: bold;
     }
     .form-control {
@@ -170,5 +171,12 @@ table > thead > tr > th {
     }
     table {
         font-size: 25pt;
+    }
+    .btn > span > svg {
+        width: 50px;
+        height: 50px;
+    }
+    .badge-ok {
+        font-size: 20pt;
     }
 }
