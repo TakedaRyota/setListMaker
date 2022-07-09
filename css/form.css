@@ -5,18 +5,39 @@ form.htmlに適用するスタイルシート
 html,
 body {
     height: auto;
+    position: relative;
 }
+body {
+    min-height: 100vh;
+    padding-bottom: 20px;
+}
+
 main {
     margin: 10px 5vw;
     padding: 10px;
 }
-#form-music-list,
-#complete-btn,
-#overview-btn,
-#back-btn,
-#next-btn,
-#sort-form-btn {
+footer {
+    position: absolute;
+    bottom: 0;
+}
+a {
+    display: block;
+}
+#form-top-view,
+#music-title-list-view,
+#music-detail-view,
+#other-comment-view {
     display: none;
+}
+.save-btn {
+    margin-left: auto;
+}
+.no-head {
+    width: 20px;
+}
+.list-icon {
+    position: absolute;
+    right: 5px;
 }
 .input-area {
     min-width: 300px;
@@ -44,14 +65,15 @@ input[type="number"]::-webkit-inner-spin-button {
 input[type="number"] {
     -moz-appearance: textfield;
 }
-/* --- 完了ボタン --- */
-#complete-btn {
+/* --- ボタン --- */
+#complete-btn,
+#open-music-title-form,
+#other-form-btn,
+#open-form-top-btn {
     width: 100%;
 }
-.slider {
-    display: none;
-}
-.slider.slick-initialized {
+/* --- 表示していることを示す --- */
+.input-area-show {
     display: block;
 }
 /* --- リスト番号 --- */
@@ -59,7 +81,18 @@ input[type="number"] {
     background-color: #EC87C0;
 }
 .list-no {
-    text-align: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: relative;
+}
+.list-no > span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    color: #ffffff;
 }
 /*  --- 追加削除アイコン --- */
 #edit-btn-area {
@@ -67,6 +100,17 @@ input[type="number"] {
 }
 #remove-btn {
     margin-left: auto;
+}
+.detail-view-btn {
+    position: relative;
+}
+.detail-view-btn>.remove-btn {
+    display: none;
+    position: absolute;
+    bottom: -20px;
+}
+table > thead > tr > th {
+    background-color: #bcb6ff !important;
 }
 
 @media (max-width: 1000px) {

@@ -3,13 +3,36 @@
 ============================ */
 
 $(function () {
+    const $indexView = $('#form-index'); // 作成トップ
+    const $formTopView = $('#form-top-view'); // 概要入力
+    const $musicTitleListView = $('#music-title-list-view'); // 曲名リスト
+    const $musicDetailView = $('#music-detail-view'); // 楽曲詳細入力
+    const $otherCommentView = $('#other-comment-view'); // その他自由コメント欄
+    const $musicListTable = $('#music-list-table'); // 曲目リスト
+    const $musicCards = $('#music-cards'); // 曲詳細カード
+
     /**
-     * 曲編集ボタン押下時
-     * フォーム概要を非表示/リスト編集を表示
+     * 概要入力ボタン押下時
      */
-    $('#music-edit-btn').on('click', function () {
-        $('#form-music-list, #form-top, #overview-btn, #music-edit-btn, #back-btn, #next-btn, #sort-form-btn').toggle();
-        $(this).hide();
+    $('#open-form-top-btn').on('click', function () {
+        $indexView.hide();
+        $formTopView.show();
+    });
+
+    /**
+     * セットリスト入力ボタン押下時
+     */
+    $('#open-music-title-form').on('click', function () {
+        $indexView.hide();
+        $musicTitleListView.show();
+    });
+
+    /**
+     * その他入力ボタン押下時
+     */
+    $('#other-form-btn').on('click', function () {
+        $indexView.hide();
+        $otherCommentView.show();
     });
 
     /**
@@ -41,31 +64,56 @@ $(function () {
     });
 
     /**
-     * 概要入力に遷移ボタン押下時
-     */
-    $('#overview-btn').on('click', function () {
-        $('#form-music-list, #form-top, #overview-btn, #music-edit-btn, #back-btn, #next-btn, #sort-form-btn').toggle();
-    });
-
-    $('.slider').slick({
-        infinite: false, // ループ禁止
-        slidesToShow: 1,
-        dots: false,
-    });
-
-    /**
      * リスト追加ボタン押下時
      */
-    $('#add-btn').on('click', function () {
-
+    $('#add-music-btn').on('click', function () {
+        const listLength = $musicListTable.children().length;
+        const musicTitle = $('#music-title-form').val();
+        $musicListTable.append(`
+            <tr>
+                <td>${listLength + 1}</td>
+                <td>
+                    <a class="detail-view-btn" href="#set-list${listLength + 1}">${musicTitle}
+                        <span uk-icon="icon: triangle-right" class="list-icon"></span>
+                    </a>
+                </td>
+            </tr>`);
+        $('#music-title-form').val('');
+        $musicCards.append(`
+            <div id="set-list${listLength + 1}" class="music-detail-form input-area bg-light">
+                <div class="input-label">タイトル</div>
+                <input class="form-control mb-2" type="text" value="${musicTitle}" disabled/>
+                <div class="input-label">Track</div>
+                <div class="d-flex mb-2">
+                    <button class="btn btn-normal btn-minus" type="button">
+                        <span uk-icon="icon: minus"></span>
+                    </button>
+                    <input class="form-control" type="number" min="0" max="100"/>
+                    <button class="btn btn-normal btn-plus" type="button">
+                        <span uk-icon="icon: plus"></span>
+                    </button>
+                </div>
+                <div class="input-label">TIME</div>
+                <input class="form-control mb-2" type="time"/>
+                <div class="input-label">キッカケ
+                    <span class="badge badge-danger">必須</span>
+                </div>
+                <textarea class="form-control mb-2" rows="2" placeholder="音先行/板付など" required></textarea>
+                <div class="input-label">音響への要望</div>
+                <textarea class="form-control mb-2" rows="3" placeholder=""></textarea>
+                <div class="input-label">照明への要望</div>
+                <textarea class="form-control mb-2" rows="3" placeholder=""></textarea>
+            </div>`);
     });
 
     /**
-     * リスト削除ボタン押下時
+     * タイトルテーブル押下時
      */
-    $('#remove-btn').on('click', function () {
-
+    $musicListTable.on('click', '.detail-view-btn', function () {
+        $musicTitleListView.hide();
+        $musicDetailView.show();
+        $('.music-detail-form').hide();
+        $(`${$(this).attr('href')}`).show();
     });
-    
 
 });
