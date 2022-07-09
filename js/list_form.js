@@ -43,7 +43,7 @@ $(function () {
             </tr>`);
         $('#music-title-form').val('');
         $musicCards.append(`
-            <div id="set-list${listLength + 1}" class="music-detail-form input-area bg-light">
+            <div id="set-list${listLength + 1}" class="music-detail-form input-area bg-light mb-3">
                 <div class="input-label">タイトル</div>
                 <input class="form-control mb-2" type="text" value="${musicTitle}" disabled/>
                 <div class="input-label">Track</div>

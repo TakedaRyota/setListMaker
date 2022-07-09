@@ -21,7 +21,7 @@ footer {
 @media (max-width: 1000px) {
     .btn {
         min-height: 80px;
-        font-size: 20pt;
+        font-size: 25pt;
     }
     .btn > span > svg {
         width: 50px;

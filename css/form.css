@@ -28,6 +28,7 @@ a,
 #music-title-list-view,
 #music-detail-view,
 #other-comment-view,
+#output-view,
 .glyphicon  {
     display: none;
 }
@@ -63,6 +64,8 @@ a,
 }
 .form-title {
     display: block !important;
+    font-weight: bold;
+    font-size: 20pt;
 }
 /* --- Chrome, Safari対応 --- */
 input[type="number"]::-webkit-outer-spin-button,
@@ -86,16 +89,6 @@ input[type="number"] {
 /* --- 表示していることを示す --- */
 .input-area-show {
     display: block;
-}
-/* --- リスト番号 --- */
-.bg-pink {
-    background-color: #EC87C0;
-}
-.list-no {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    position: relative;
 }
 .list-no > span {
     position: absolute;
@@ -139,7 +132,17 @@ table > thead > tr > th {
 .badge-danger {
     background-color: #da4453 !important;
     color: #ffffff !important;
-    font-size: 20pt;
+}
+
+.output-btn-area .btn {
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border-color: #15b60d;
+    color: #15b60d;
+}
+.plus-circle {
+    min-width: 18px;
 }
 
 @media (max-width: 1000px) {
@@ -170,13 +173,14 @@ table > thead > tr > th {
         line-height: 80px;
     }
     table {
-        font-size: 25pt;
+        font-size: 35pt;
     }
     .btn > span > svg {
         width: 50px;
         height: 50px;
     }
-    .badge-ok {
+    .badge-ok,
+    .badge-danger {
         font-size: 20pt;
     }
 }

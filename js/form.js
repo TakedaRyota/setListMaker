@@ -10,6 +10,7 @@ $(function () {
     const $otherCommentView = $('#other-comment-view'); // その他自由コメント欄
     const $musicListTable = $('#music-list-table'); // 曲目リスト
     const $musicCards = $('#music-cards'); // 曲詳細カード
+    const $outputView = $('#output-view'); // 出力画面
 
     /* 高さvhの調整 */
     const vh = $(window).height() * 0.01;
@@ -46,7 +47,8 @@ $(function () {
         if ($('#open-form-top-btn').children('.badge-ok').is(':visible') &&
             $('#open-music-title-form').children('.badge-ok').is(':visible') &&
             $('#other-form-btn').children('.badge-ok').is(':visible')) {
-
+                $indexView.hide();
+                $outputView.show();
         }
         return;
     });
@@ -54,7 +56,7 @@ $(function () {
     /**
      * -ボタン押下時
      */
-    $('.btn-minus').on('click', function () {
+    $('main').on('click', '.btn-minus', function () {
         const $inputObj = $(this).next();
         const minValue = $inputObj.attr('min');
         const currentValue = Number($inputObj.val());
@@ -68,7 +70,7 @@ $(function () {
     /**
      * ＋ボタン押下時
      */
-    $('.btn-plus').on('click', function () {
+    $('main').on('click', '.btn-plus', function () {
         const $inputObj = $(this).prev();
         const maxValue = $inputObj.attr('max');
         const currentValue = Number($inputObj.val());
