@@ -67,3 +67,7 @@
     font-weight: bold;
     padding: 20px;
 }
+#list-table-view .music-title-cell {
+    min-height: 40px;
+    vertical-align: middle;
+}

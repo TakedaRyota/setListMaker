@@ -163,7 +163,7 @@
         <!-- その他備考記載欄 -->
         <div id="other-comment-view">
             <div class="form-title">その他自由記載欄</div>
-            <textarea class="form-control mb-2" rows="6" placeholder="ご自由に入力してください。"></textarea>
+            <textarea id="other-comment-input" class="form-control mb-2" rows="6" placeholder="ご自由に入力してください。"></textarea>
             <div class="d-flex">
                 <button id="other-comment-save-btn" class="save-btn btn btn-success">
                     <span uk-icon="icon: check"></span>保存
@@ -254,31 +254,14 @@
                         <th>照明への要望</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th>1</th>
-                        <td>
-                            <div>裸足でサマー</div>
-                            <div class="time-area">
-                                <span>TIME</span>
-                                <label class="time-label">4:30</label>
-                            </div>
-                        </td>
-                        <td>1</td>
-                        <td>音先行</td>
-                        <td>オケを少し大きめに</td>
-                        <td>ピンクで可愛い感じ</td>
-                    </tr>
+                <tbody id="list-row-table">
                 </tbody>
             </table>
 
             <div class="other-title">その他</div>
-            <div class="other-text-area"></div>
+            <div id="other-comment-cell" class="other-text-area"></div>
 
         </div>
-
-        <a id="output-png-a" href=""></a>
-
     </main>
     <footer class="copyrights">copyright@LIVE FIRST</footer>
 </body>

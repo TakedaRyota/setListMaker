@@ -55,13 +55,13 @@ $(function () {
                     <button class="btn btn-normal btn-minus" type="button">
                         <span uk-icon="icon: minus"></span>
                     </button>
-                    <input class="form-control input-number" type="number" min="0" max="100"/>
+                    <input class="track-no-input form-control input-number" type="number" min="0" max="100"/>
                     <button class="btn btn-normal btn-plus" type="button">
                         <span uk-icon="icon: plus"></span>
                     </button>
                 </div>
                 <div class="input-label">TIME</div>
-                <input class="form-control mb-2" type="time"/>
+                <input class="music-time-input form-control mb-2" type="time"/>
                 <div class="input-label">キッカケ
                     <span class="badge badge-danger">必須</span>
                 </div>
@@ -70,9 +70,9 @@ $(function () {
                     <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                 </div>
                 <div class="input-label">音響への要望</div>
-                <textarea class="form-control mb-2" rows="3" placeholder=""></textarea>
+                <textarea class="pa-request-text form-control mb-2" rows="3" placeholder=""></textarea>
                 <div class="input-label">照明への要望</div>
-                <textarea class="form-control mb-2" rows="3" placeholder=""></textarea>
+                <textarea class="lt-request-text form-control mb-2" rows="3" placeholder=""></textarea>
             </div>`);
     });
 

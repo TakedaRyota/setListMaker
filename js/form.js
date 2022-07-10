@@ -80,9 +80,35 @@ $(function () {
         // 演奏時間
         $('#playing-time-cell').text($('#playing-total-time-input').val());
         // メンバー数
-        $('#member-num-cell').text($('#member-num-input').val());
+        $('#member-num-cell').text(`${$('#member-num-input').val()}人`);
         // マイク本数
-        $('#mic-num-cell').text($('#mic-num-input').val());
+        $('#mic-num-cell').text(`${$('#mic-num-input').val()}本`);
+        // その他
+        $('#other-comment-cell').text($('#other-comment-input').val());
+
+        let listTable = '';
+        $musicCards.children().each(function (index, ele) {
+            const $musicDetailEle = $(ele);
+            listTable += `
+                <tr>
+                    <th>${index + 1}</th>
+                    <td>
+                        <div class="music-title-cell">
+                            <span>${$musicDetailEle.find('.music-title').val()}</span>
+                        </div>
+                        <div class="time-area">
+                            <span>TIME</span>
+                            <label class="time-label">${$musicDetailEle.find('.music-time-input').val()}</label>
+                        </div>
+                    </td>
+                    <td>${$musicDetailEle.find('.track-no-input').val()}</td>
+                    <td>${$musicDetailEle.find('.start-position-text').val()}</td>
+                    <td>${$musicDetailEle.find('.pa-request-text').val()}</td>
+                    <td>${$musicDetailEle.find('.lt-request-text').val()}</td>
+                </tr>`;
+        });
+        $('#list-row-table').children().remove();
+        $('#list-row-table').append(listTable);
     }
 
     /**
