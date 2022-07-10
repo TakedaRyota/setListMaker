@@ -69,6 +69,9 @@ $(function () {
     }
 
     function outputTable() {
+        const currentTime = new Date();
+        // 出力日
+        $('#output-date').text(changeDateTime(currentTime));
         // イベント名
         $('#event-title-cell').text($('#event-title-input').val());
         // 会場名
@@ -147,4 +150,25 @@ $(function () {
         $indexView.show();
     });
 
+    /**
+     * 日時の表記を変更
+     * @param {Date} dateTime 
+     * @returns YYYY/MM/DD hh:mm:00
+     */
+    function changeDateTime(dateTime) {
+        return `${dateTime.getFullYear()}/${zeroPadded(dateTime.getMonth() + 1)}/${zeroPadded(dateTime.getDate())} ${zeroPadded(dateTime.getHours())}:${zeroPadded(dateTime.getMinutes())}:00`;
+    }
+
+    /**
+     * 0を付加
+     * @param {Number} number 
+     * @returns 
+     */
+    function zeroPadded(number) {
+        number = String(number);
+        if (number.length == 1) {
+            return `0${number}`;
+        }
+        return number;
+    }
 });
