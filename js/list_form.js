@@ -19,6 +19,14 @@ $(function () {
     });
 
     /**
+     * リスト戻るボタン押下時
+     */
+    $('#set-list-back-btn').on('click', function () {
+        $musicTitleListView.hide();
+        $indexView.show();
+    });
+
+    /**
      * リスト追加ボタン押下時
      */
     $('#add-music-btn').on('click', function () {

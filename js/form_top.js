@@ -17,6 +17,14 @@ $(function () {
     });
 
     /**
+     * 戻るボタン押下時
+     */
+    $('#form-top-back-btn').on('click', function () {
+        $formTopView.hide();
+        $indexView.show();
+    });
+
+    /**
      * フォームのエラーチェック
      * @returns {Boolean}
      */
