@@ -22,17 +22,19 @@ $(function () {
      */
     function isInvalidError() {
         let isError = false;
-        if ($('.artist-name').val() == '') {
+        const $artistName = $('#artist-name-input');
+        const $totalTime = $('#playing-total-time-input');
+        if ($artistName.val() == '') {
             isError = true;
-            $('.artist-name').parent().addClass('has-error has-feedback');
+            $artistName.parent().addClass('has-error has-feedback');
         } else {
-            $('.artist-name').parent().removeClass('has-error has-feedback');
+            $artistName.parent().removeClass('has-error has-feedback');
         }
-        if ($('.playing-total-time').val() == '') {
+        if ($totalTime.val() == '') {
             isError = true;
-            $('.playing-total-time').parent().addClass('has-error has-feedback');
+            $totalTime.parent().addClass('has-error has-feedback');
         } else {
-            $('.playing-total-time').parent().removeClass('has-error has-feedback');
+            $totalTime.parent().removeClass('has-error has-feedback');
         }
         return isError;
     }

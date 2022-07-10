@@ -47,11 +47,43 @@ $(function () {
         if ($('#open-form-top-btn').children('.badge-ok').is(':visible') &&
             $('#open-music-title-form').children('.badge-ok').is(':visible') &&
             $('#other-form-btn').children('.badge-ok').is(':visible')) {
+                $('#list-table-view').show();
+                outputTable();
+                html2image();
                 $indexView.hide();
                 $outputView.show();
+                $('#list-table-view').hide();
         }
         return;
     });
+
+    /**
+     * 画像に変換
+     */
+    function html2image() {
+        const $capture = document.querySelector('#list-table-view');
+        html2canvas($capture, {useCORS: true}).then(canvas => {
+        const base64 = canvas.toDataURL('image/png');
+        $('#preview-img').attr("src", base64);
+        });
+    }
+
+    function outputTable() {
+        // イベント名
+        $('#event-title-cell').text($('#event-title-input').val());
+        // 会場名
+        $('#event-place-cell').text($('#event-place-input').val());
+        // 開催日
+        $('#event-date-cell').text($('#calendar').val());
+        // アーティスト名
+        $('#artist-name-cell').text($('#artist-name-input').val());
+        // 演奏時間
+        $('#playing-time-cell').text($('#playing-total-time-input').val());
+        // メンバー数
+        $('#member-num-cell').text($('#member-num-input').val());
+        // マイク本数
+        $('#mic-num-cell').text($('#mic-num-input').val());
+    }
 
     /**
      * -ボタン押下時
@@ -79,6 +111,14 @@ $(function () {
         if (currentValue < maxValue) {
             $inputObj.val(currentValue + 1);
         }
+    });
+
+    /**
+     * 編集に戻るボタン押下時
+     */
+    $('#back-edit-btn').on('click', function () {
+        $outputView.hide();
+        $indexView.show();
     });
 
 });

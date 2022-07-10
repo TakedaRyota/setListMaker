@@ -16,7 +16,7 @@ footer {
 }
 .copyrights {
     color: black;
-    font-size: 25pt;
+    font-size: 15pt;
 }
 @media (max-width: 1000px) {
     .btn {

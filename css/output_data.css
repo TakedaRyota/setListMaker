@@ -1,0 +1,69 @@
+/* ==========================================
+出力するテーブルに適用するスタイルシート
+============================================= */
+
+#list-table-view {
+    display: none;
+    padding: 30px 20px;
+    background-color: #ffffff;
+}
+#output-png-a {
+    display: none;
+}
+#list-table-view .cell-label {
+    font-weight: bold;
+    font-size: medium;
+}
+
+#list-table-view .name-area {
+    font-size: large;
+}
+#list-table-view table {
+    background-color: #ffffff;
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #000000;
+}
+#list-table-view table th {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+}
+#list-table-view table td {
+    min-width: 50px;
+    border: 1px solid #000000;
+    padding: 0 5px;
+}
+#list-table-view .col-width-fix {
+    width: 20%;
+}
+#list-table-view .time-label {
+    margin: 0;
+}
+#list-table-view .time-area {
+    border-top: 1px solid #000000;
+}
+#list-table-view .other-title {
+    width: fit-content;
+    padding: 0 10px;
+    font-weight: bold;
+}
+#list-table-view .other-text-area {
+    width: 100%;
+    min-height: 50px;
+    padding: 0 5px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+}
+#preview-img {
+    width: 100%;
+}
+#preview-img > img {
+    width: auto;
+}
+#event-title-cell {
+    min-height: 150px;
+    font-size: large;
+    font-weight: bold;
+    padding: 20px;
+}
