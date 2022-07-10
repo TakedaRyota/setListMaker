@@ -35,17 +35,21 @@ $(function () {
         $musicListTable.append(`
             <tr>
                 <td>${listLength + 1}</td>
-                <td>
-                    <a class="detail-view-btn" href="#set-list${listLength + 1}">${musicTitle}
-                        <span uk-icon="icon: triangle-right" class="list-icon"></span>
-                    </a>
+                <td class="position-relative">
+                    <a class="detail-view-btn" id="set-list-title-${listLength + 1}" href="#set-list${listLength + 1}">${musicTitle}  </a>
+                    <span uk-icon="icon: triangle-right" class="list-icon"></span>
                 </td>
             </tr>`);
         $('#music-title-form').val('');
         $musicCards.append(`
             <div id="set-list${listLength + 1}" class="music-detail-form input-area bg-light mb-3">
-                <div class="input-label">タイトル</div>
-                <input class="form-control mb-2" type="text" value="${musicTitle}" disabled/>
+                <div class="input-label">タイトル
+                    <span class="badge badge-danger">必須</span>
+                </div>
+                <div class="">
+                    <input class="form-control mb-2 music-title" type="text" data-list-id="${listLength + 1}" value="${musicTitle}"/>
+                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                </div>
                 <div class="input-label">Track</div>
                 <div class="d-flex mb-2">
                     <button class="btn btn-normal btn-minus" type="button">
@@ -88,16 +92,38 @@ $(function () {
      * 詳細保存ボタン押下時
      */
     $('#detail-save-btn').on('click', function () {
-        const $textObj = $('.input-area-show').find('.start-position-text');
-        const startPositionText = $textObj.val();
-        if (startPositionText == '') {
-            $textObj.parent().addClass('has-error has-feedback');
-            return;
-        } else {
-            $textObj.parent().removeClass('has-error has-feedback');
-        }
+        if (isInvalidError()) return;
+
+        const $titleObj = $('.input-area-show').find('.music-title');
+        const listId = $titleObj.attr('data-list-id');
+        $(`#set-list-title-${listId}`).text($titleObj.val());
+
         $musicDetailView.hide();
         $musicTitleListView.show();
     });
+
+    /**
+     * フォームのエラーチェック
+     * @returns {Boolean}
+     */
+    function isInvalidError() {
+        let isError = false;
+        const $textObj = $('.input-area-show').find('.start-position-text');
+        const $titleObj = $('.input-area-show').find('.music-title');
+
+        if ($textObj.val() == '') {
+            isError = true;
+            $textObj.parent().addClass('has-error has-feedback');
+        } else {
+            $textObj.parent().removeClass('has-error has-feedback');
+        }
+        if ($titleObj.val() == '') {
+            isError = true;
+            $titleObj.parent().addClass('has-error has-feedback');
+        } else {
+            $titleObj.parent().removeClass('has-error has-feedback');
+        }
+        return isError;
+    }
 
 });

@@ -147,7 +147,7 @@ table > thead > tr > th {
 
 @media (max-width: 1000px) {
     main {
-        margin: 0 5px;
+        margin: 0 10px 30px 10px;
     }
     .input-area {
         min-width: 300px;
