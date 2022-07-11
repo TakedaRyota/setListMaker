@@ -25,6 +25,13 @@ $(function () {
     });
 
     /**
+     * 演奏時間入力補完ボタン押下時
+     */
+    $('.playing-time-input').on('click', function () {
+        $('#playing-total-time-input').val($(this).text());
+    });
+
+    /**
      * フォームのエラーチェック
      * @returns {Boolean}
      */

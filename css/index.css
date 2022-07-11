@@ -17,7 +17,8 @@ main {
     height: calc(100% - 36px - 40%);
 }
 #title-area {
-    height: calc(100% - 40px);
+    height: 50%;
+    min-height: 200px;
     text-align: center;
     position: relative;
 }
@@ -43,4 +44,6 @@ main {
     transform: translateY(-50%) translateX(-50%);
     -webkit-transform: translateY(-50%) translateX(-50%);
 }
-
+#info-area {
+    padding: 5px 5%;
+}

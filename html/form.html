@@ -17,6 +17,7 @@
     <script src="../lib/js/html2canvas.min.js"></script>
 
     <!-- 画面ごとのjs -->
+    <script src="../js/common.js"></script>
     <script src="../js/form.js"></script>
     <script src="../js/form_top.js"></script>
     <script src="../js/list_form.js"></script>
@@ -65,7 +66,7 @@
                 <input id="event-title-input" class="form-control mb-2" type="text" placeholder="イベント名/催事名"/>
                 <div class="input-label">会場名</div>
                 <input id="event-place-input" class="form-control mb-2" type="text" placeholder="会場名"/>
-                <div class="input-label">開催日</div>
+                <div class="input-label">出演日</div>
                 <input id="calendar" class="form-control mb-2" type="date"/>
                 <div class="input-label">アーティスト名
                     <span class="badge badge-danger">必須</span>
@@ -77,6 +78,17 @@
                 <div class="input-label">演奏時間
                     <span class="badge badge-danger">必須</span>
                 </div>
+                <div class="scroll-area">
+                    <div class="d-flex mb-2">
+                        <button class="playing-time-input me-2">10分</button>
+                        <button class="playing-time-input me-2">15分</button>
+                        <button class="playing-time-input me-2">20分</button>
+                        <button class="playing-time-input me-2">25分</button>
+                        <button class="playing-time-input me-2">30分</button>
+                        <button class="playing-time-input me-2">35分</button>
+                        <button class="playing-time-input me-2">40分</button>
+                    </div>
+                </div>
                 <div class="">
                     <input id="playing-total-time-input" class="form-control mb-2" type="text"/>
                     <span class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -87,7 +99,7 @@
                     <button class="btn btn-minus" type="button">
                         <span uk-icon="icon: minus"></span>
                     </button>
-                    <input id="member-num-input" class="form-control input-number" type="number" min="0" max="100"/>
+                    <input id="member-num-input" class="form-control input-number" type="number" value="0" min="0" max="100"/>
                     <button class="btn btn-plus" type="button">
                         <span uk-icon="icon: plus"></span>
                     </button>
@@ -97,7 +109,7 @@
                     <button class="btn btn-normal btn-minus" type="button">
                         <span uk-icon="icon: minus"></span>
                     </button>
-                    <input id="mic-num-input" class="form-control input-number" type="number" min="0" max="100"/>
+                    <input id="mic-num-input" class="form-control input-number" type="number" value="0" min="0" max="100"/>
                     <button class="btn btn-normal btn-plus" type="button">
                         <span uk-icon="icon: plus"></span>
                     </button>
@@ -239,7 +251,7 @@
                     <tr>
                         <th class="col-width-fix">会場</th>
                         <td id="event-place-cell" colspan="2"></td>
-                        <th>日付</th>
+                        <th>出演日</th>
                         <td id="event-date-cell" class="event-date" colspan="2"></td>
                     </tr>
                     <tr>
@@ -276,10 +288,15 @@
             <div id="other-comment-cell" class="other-text-area"></div>
 
             <!-- Copyrights -->
-            <div class="text-center mt-3">SET LIST MAKER is created by LIVE FIRST.</div>
+            <div class="text-center mt-3">This form is created by SET LIST MAKER.</div>
 
         </div>
     </main>
+    <!-- version情報 -->
+    <div class="version-area">
+        <span>ver.</span>
+        <span class="version-info"></span>
+    </div>
     <footer class="copyrights">copyright@LIVE FIRST</footer>
 </body>
 </html>

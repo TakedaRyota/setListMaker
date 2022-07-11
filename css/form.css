@@ -140,8 +140,16 @@ input[type="number"] {
 .plus-circle {
     min-width: 18px;
 }
+/* --- 横スクロール --- */
+.scroll-area {
+    overflow-y: scroll;
+    width: 100%;
+}
+/* --- 入力補完ボタン --- */
 .music-start-input,
-.position-start-input {
+.position-start-input,
+.playing-time-input {
+    white-space: nowrap;
     padding: 0 10px;
     background-color: #ffffff;
     border-radius: 5px;
