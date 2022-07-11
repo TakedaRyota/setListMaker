@@ -171,6 +171,9 @@
             <div class="form-title">その他自由記載欄</div>
             <textarea id="other-comment-input" class="form-control mb-2" rows="6" placeholder="ご自由に入力してください。"></textarea>
             <div class="d-flex">
+                <button id="detail-back-btn" class="btn btn-success" type="button">
+                    <span uk-icon="icon: arrow-left"></span>戻る
+                </button>
                 <button id="other-comment-save-btn" class="save-btn btn btn-success">
                     <span uk-icon="icon: check"></span>保存
                 </button>
@@ -230,7 +233,7 @@
             <table class="mb-2">
                 <tbody>
                     <tr>
-                        <th class="col-width-fix">イベント名</th>
+                        <th class="col-width-fix height-max">イベント名</th>
                         <td id="event-title-cell" colspan="5"></td>
                     </tr>
                     <tr>
@@ -240,7 +243,7 @@
                         <td id="event-date-cell" class="event-date" colspan="2"></td>
                     </tr>
                     <tr>
-                        <th class="col-width-fix">アーティスト名</th>
+                        <th class="col-width-fix height-max">アーティスト名</th>
                         <td id="artist-name-cell" colspan="5"></td>
                     </tr>
                     <tr>

@@ -16,10 +16,6 @@ main {
     margin: 10px 5vw;
     padding: 10px;
 }
-footer {
-    position: absolute;
-    bottom: 0;
-}
 a,
 .has-feedback > .glyphicon {
     display: block;
@@ -144,7 +140,14 @@ input[type="number"] {
 .plus-circle {
     min-width: 18px;
 }
+.music-start-input,
+.position-start-input {
+    padding: 0 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #15b60d;
 
+}
 @media (max-width: 1000px) {
     main {
         margin: 0 10px;

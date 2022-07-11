@@ -18,6 +18,10 @@ footer {
 .version-area {
     text-align: center;
 }
+footer {
+    position: absolute;
+    bottom: 0;
+}
 .copyrights {
     color: black;
     font-size: 15pt;

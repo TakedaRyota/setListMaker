@@ -77,7 +77,7 @@ $(function () {
         // 会場名
         $('#event-place-cell').text($('#event-place-input').val());
         // 開催日
-        $('#event-date-cell').text($('#calendar').val());
+        $('#event-date-cell').text(getOpenDate($('#calendar').val()));
         // アーティスト名
         $('#artist-name-cell').text($('#artist-name-input').val());
         // 演奏時間
@@ -157,6 +157,19 @@ $(function () {
      */
     function changeDateTime(dateTime) {
         return `${dateTime.getFullYear()}/${zeroPadded(dateTime.getMonth() + 1)}/${zeroPadded(dateTime.getDate())} ${zeroPadded(dateTime.getHours())}:${zeroPadded(dateTime.getMinutes())}:00`;
+    }
+
+    /**
+     * 開催日を出力します
+     * @param {Date} date 
+     * @returns 
+     */
+    function getOpenDate(date) {
+        if (date != ''){
+            date = new Date(date);
+            return `${date.getFullYear()}年${zeroPadded(date.getMonth() + 1)}月${zeroPadded(date.getDate())}日`;
+        }
+        return '';
     }
 
     /**

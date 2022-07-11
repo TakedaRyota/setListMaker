@@ -77,3 +77,6 @@
     min-height: 40px;
     vertical-align: middle;
 }
+#list-table-view .height-max {
+    height: 35px;
+}

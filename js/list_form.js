@@ -50,12 +50,12 @@ $(function () {
             </tr>`);
         $('#music-title-form').val('');
         $musicCards.append(`
-            <div id="set-list${listLength + 1}" class="music-detail-form input-area bg-light mb-3">
+            <div id="set-list${listLength + 1}" class="music-detail-form input-area bg-light mb-3" data-list-id="${listLength + 1}">
                 <div class="input-label">タイトル
                     <span class="badge badge-danger">必須</span>
                 </div>
                 <div class="">
-                    <input class="form-control mb-2 music-title" type="text" data-list-id="${listLength + 1}" value="${musicTitle}"/>
+                    <input class="form-control mb-2 music-title" type="text" value="${musicTitle}"/>
                     <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                 </div>
                 <div class="input-label">Track</div>
@@ -68,10 +68,16 @@ $(function () {
                         <span uk-icon="icon: plus"></span>
                     </button>
                 </div>
-                <div class="input-label">TIME</div>
-                <input class="music-time-input form-control mb-2" type="time"/>
+                <div class="input-label">TIME
+                    <span class="badge badge-danger">必須</span>
+                </div>
+                <input class="music-time-input form-control mb-2" type="time" min="00:00" max="59:59"/>
                 <div class="input-label">キッカケ
                     <span class="badge badge-danger">必須</span>
+                </div>
+                <div class="d-flex mb-2">
+                    <button class="music-start-input me-2">音先行</button>
+                    <button class="position-start-input">板付</button>
                 </div>
                 <div class="">
                     <textarea class="start-position-text form-control mb-2" rows="2" placeholder="音先行/板付など" required></textarea>
@@ -101,11 +107,13 @@ $(function () {
      */
     $('#detail-save-btn').on('click', function () {
         if (isInvalidError()) return;
+        const $showListObj = $('.input-area-show');
+        const listId = $showListObj.attr('data-list-id');
+        $(`#set-list-title-${listId}`).text(
+            $showListObj.find('.music-title').val()
+        );
 
-        const $titleObj = $('.input-area-show').find('.music-title');
-        const listId = $titleObj.attr('data-list-id');
-        $(`#set-list-title-${listId}`).text($titleObj.val());
-
+        $showListObj.removeClass('input-area-show');
         $musicDetailView.hide();
         $musicTitleListView.show();
     });
@@ -133,5 +141,16 @@ $(function () {
         }
         return isError;
     }
-
+    /**
+     * 音先行ボタン押下時
+     */
+     $musicCards.on('click', '.music-start-input', function () {
+        $(this).parent().next().children('.start-position-text').text('音先行');
+    });
+    /**
+     * 板付ボタン押下時
+     */
+    $musicCards.on('click', '.position-start-input', function () {
+        $(this).parent().next().children('.start-position-text').text('板付');
+    });
 });
