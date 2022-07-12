@@ -153,8 +153,12 @@ input[type="number"] {
     background-color: #ffffff;
     border-radius: 5px;
     border: 1px solid #15b60d;
-
 }
+
+#music-detail-view {
+    margin: 0 20%;
+}
+
 @media (max-width: 1000px) {
     main {
         margin: 0 10px;
@@ -193,8 +197,5 @@ input[type="number"] {
     .badge-ok,
     .badge-danger {
         font-size: 20pt;
-    }
-    #music-detail-view {
-        margin: 0 20%;
     }
 }
