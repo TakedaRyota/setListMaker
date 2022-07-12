@@ -13,7 +13,7 @@ body {
 }
 
 main {
-    margin: 10px 5vw;
+    margin: 10px 20%;
     padding: 10px;
 }
 a,
@@ -153,10 +153,6 @@ input[type="number"] {
     background-color: #ffffff;
     border-radius: 5px;
     border: 1px solid #15b60d;
-}
-
-#music-detail-view {
-    margin: 0 20%;
 }
 
 @media (max-width: 1000px) {

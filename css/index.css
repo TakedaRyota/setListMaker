@@ -9,8 +9,8 @@ body {
     overflow: hidden;
 }
 main {
-    width: 100%;
     height: calc(var(--vh, 1vh) * 100);
+    margin: 0 20%;
 }
 #top-page {
     width: 100%;
@@ -46,4 +46,9 @@ main {
 }
 #info-area {
     padding: 5px 5%;
+}
+@media (max-width: 1000px) {
+    main {
+        margin: 0 10px;
+    }
 }
