@@ -11,6 +11,7 @@ $(function () {
     const $musicListTable = $('#music-list-table'); // 曲目リスト
     const $musicCards = $('#music-cards'); // 曲詳細カード
     const $outputView = $('#output-view'); // 出力画面
+    let base64;
 
     /* 高さvhの調整 */
     const vh = $(window).height() * 0.01;
@@ -48,8 +49,10 @@ $(function () {
             $('#open-music-title-form').children('.badge-ok').is(':visible') &&
             $('#other-form-btn').children('.badge-ok').is(':visible')) {
                 $('#list-table-view').show();
-                outputTable();
-                html2image();
+                
+                outputTable(); // 出力テーブルの生成
+                html2image(); // 画像の生成
+                
                 $indexView.hide();
                 $outputView.show();
                 $('#list-table-view').hide();
@@ -58,16 +61,38 @@ $(function () {
     });
 
     /**
+     * pdf出力ボタン押下時
+     */
+    $('#output-pdf-btn').on('click', function () {
+        outputHtml2pdf(); // pdfの生成
+    });
+
+    /**
      * 画像に変換
      */
     function html2image() {
         const $capture = document.querySelector('#list-table-view');
         html2canvas($capture, {useCORS: true}).then(canvas => {
-        const base64 = canvas.toDataURL('image/png');
+        base64 = canvas.toDataURL('image/png');
         $('#preview-img').attr("src", base64);
         });
     }
 
+    /**
+     * pdfの生成
+     */
+    function outputHtml2pdf() {
+        const doc = new jspdf.jsPDF();
+        const fileName = `セットリスト_${$('#artist-name-input').val()}.pdf`;
+
+        const width = doc.internal.pageSize.width;
+        doc.addImage(base64, 'png', 10, 0, width * 0.9, 0);
+        doc.save(fileName);
+    }
+
+    /**
+     * テーブルhtmlの生成
+     */
     function outputTable() {
         const currentTime = new Date();
         // 出力日
@@ -97,7 +122,7 @@ $(function () {
                     <th>${index + 1}</th>
                     <td>
                         <div class="music-title-cell">
-                            <span>${$musicDetailEle.find('.music-title').val()}</span>
+                            ${$musicDetailEle.find('.music-title').val()}
                         </div>
                         <div class="time-area">
                             <span>TIME</span>

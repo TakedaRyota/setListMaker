@@ -2,7 +2,7 @@
 全てのhtmlに適用するJS
 ============================ */
 
-const VERSION = '0.0.3';
+const VERSION = '0.0.4';
 
 $(function () {
 

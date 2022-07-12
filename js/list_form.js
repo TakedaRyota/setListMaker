@@ -44,7 +44,7 @@ $(function () {
             <tr>
                 <td>${listLength + 1}</td>
                 <td class="position-relative">
-                    <a class="detail-view-btn" id="set-list-title-${listLength + 1}" href="#set-list${listLength + 1}">${musicTitle}  </a>
+                    <a class="detail-view-btn" id="set-list-title-${listLength + 1}" href="#set-list${listLength + 1}">${musicTitle}</a>
                     <span uk-icon="icon: triangle-right" class="list-icon"></span>
                 </td>
             </tr>`);
@@ -76,8 +76,8 @@ $(function () {
                     <span class="badge badge-danger">必須</span>
                 </div>
                 <div class="d-flex mb-2">
-                    <button class="music-start-input me-2">音先行</button>
-                    <button class="position-start-input">板付</button>
+                    <button class="start-position-input me-2">音先行</button>
+                    <button class="start-position-input">板付</button>
                 </div>
                 <div class="">
                     <textarea class="start-position-text form-control mb-2" rows="2" placeholder="音先行/板付など" required></textarea>
@@ -144,13 +144,7 @@ $(function () {
     /**
      * 音先行ボタン押下時
      */
-     $musicCards.on('click', '.music-start-input', function () {
-        $(this).parent().next().children('.start-position-text').text('音先行');
-    });
-    /**
-     * 板付ボタン押下時
-     */
-    $musicCards.on('click', '.position-start-input', function () {
-        $(this).parent().next().children('.start-position-text').text('板付');
+    $musicCards.on('click', '.start-position-input', function () {
+        $(this).parent().parent().find('.start-position-text').text($(this).text());
     });
 });
