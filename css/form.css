@@ -194,4 +194,7 @@ input[type="number"] {
     .badge-danger {
         font-size: 20pt;
     }
+    #music-detail-view {
+        margin: 0 20%;
+    }
 }
