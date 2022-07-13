@@ -13,6 +13,7 @@
     <script src="../lib/js/icheck.min.js"></script>
     <script src="../lib/js/jquery.fs.selecter.min.js"></script>
     <script src="../lib/js/jquery.fs.stepper.min.js"></script>
+    <script src="../js/common.js"></script>
     <script src="../js/index.js"></script>
     <!-- スタイルシートはココに入れる -->
     <link rel="stylesheet" type="text/css" href="../lib/css/uikit.min.css">
@@ -30,12 +31,23 @@
                 <label class="application-name center-middle">セットリストメーカー</label>
             </div>
             <button id="make-btn" class="btn btn-info" onclick="location.href='./form.html'"><span uk-icon="pencil"></span>作成する</button>
+            <!-- 情報エリア -->
+            <div id="info-area">
+                <h4 class="m-0">改訂履歴</h4>
+                <ul>
+                    <li>2022.07.12 入力補完ボタン追加 ver.0.0.3</li>
+                    <li>2022.07.12 pdf出力機能追加 ver.0.0.4</li>
+                </ul>
+            </div>
+            <!-- 広告 -->
             <div id="advertisement-area">
-                <div id="advertisement-link" class="center-middle bg-light">
-                    <a>
-                        <img src="">
-                    </a>
+                <div id="advertisement-link" class="center-middle">
+                    <img src="../image/advertise_offer.png"/>
                 </div> 
+            </div>
+            <div class="version-area">
+                <span>ver.</span>
+                <span class="version-info"></span>
             </div>
         </div>
     </main>

@@ -14,4 +14,12 @@ $(function () {
         $otherCommentView.hide();
         $indexView.show();
     });
+
+    /**
+     * 戻るボタン押下時
+     */
+    $('#detail-back-btn').on('click', function () {
+        $otherCommentView.hide();
+        $indexView.show();
+    });
 });

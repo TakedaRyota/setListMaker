@@ -13,12 +13,8 @@ body {
 }
 
 main {
-    margin: 10px 5vw;
+    margin: 10px 20%;
     padding: 10px;
-}
-footer {
-    position: absolute;
-    bottom: 0;
 }
 a,
 .has-feedback > .glyphicon {
@@ -28,6 +24,7 @@ a,
 #music-title-list-view,
 #music-detail-view,
 #other-comment-view,
+#output-view,
 .glyphicon  {
     display: none;
 }
@@ -63,6 +60,8 @@ a,
 }
 .form-title {
     display: block !important;
+    font-weight: bold;
+    font-size: 20pt;
 }
 /* --- Chrome, Safari対応 --- */
 input[type="number"]::-webkit-outer-spin-button,
@@ -87,16 +86,6 @@ input[type="number"] {
 .input-area-show {
     display: block;
 }
-/* --- リスト番号 --- */
-.bg-pink {
-    background-color: #EC87C0;
-}
-.list-no {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    position: relative;
-}
 .list-no > span {
     position: absolute;
     top: 50%;
@@ -120,7 +109,7 @@ input[type="number"] {
     position: absolute;
     bottom: -20px;
 }
-table > thead > tr > th {
+.table > thead > tr > th {
     background-color: #bcb6ff !important;
 }
 .badge-ok {
@@ -139,12 +128,37 @@ table > thead > tr > th {
 .badge-danger {
     background-color: #da4453 !important;
     color: #ffffff !important;
-    font-size: 20pt;
+}
+
+.output-btn-area .btn {
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border-color: #15b60d;
+    color: #15b60d;
+}
+.plus-circle {
+    min-width: 18px;
+}
+/* --- 横スクロール --- */
+.scroll-area {
+    overflow-y: scroll;
+    width: 100%;
+}
+/* --- 入力補完ボタン --- */
+.start-position-input,
+.playing-time-input {
+    white-space: nowrap;
+    padding: 0 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #15b60d;
 }
 
 @media (max-width: 1000px) {
     main {
-        margin: 0 5px;
+        margin: 0 10px;
+        padding-bottom: 50px;
     }
     .input-area {
         min-width: 300px;
@@ -169,14 +183,15 @@ table > thead > tr > th {
     .form-control-feedback {
         line-height: 80px;
     }
-    table {
-        font-size: 25pt;
+    .table {
+        font-size: 35pt;
     }
     .btn > span > svg {
         width: 50px;
         height: 50px;
     }
-    .badge-ok {
+    .badge-ok,
+    .badge-danger {
         font-size: 20pt;
     }
 }

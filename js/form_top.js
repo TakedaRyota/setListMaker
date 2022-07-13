@@ -17,22 +17,39 @@ $(function () {
     });
 
     /**
+     * 戻るボタン押下時
+     */
+    $('#form-top-back-btn').on('click', function () {
+        $formTopView.hide();
+        $indexView.show();
+    });
+
+    /**
+     * 演奏時間入力補完ボタン押下時
+     */
+    $('.playing-time-input').on('click', function () {
+        $('#playing-total-time-input').val($(this).text());
+    });
+
+    /**
      * フォームのエラーチェック
      * @returns {Boolean}
      */
     function isInvalidError() {
         let isError = false;
-        if ($('.artist-name').val() == '') {
+        const $artistName = $('#artist-name-input');
+        const $totalTime = $('#playing-total-time-input');
+        if ($artistName.val() == '') {
             isError = true;
-            $('.artist-name').parent().addClass('has-error has-feedback');
+            $artistName.parent().addClass('has-error has-feedback');
         } else {
-            $('.artist-name').parent().removeClass('has-error has-feedback');
+            $artistName.parent().removeClass('has-error has-feedback');
         }
-        if ($('.playing-total-time').val() == '') {
+        if ($totalTime.val() == '') {
             isError = true;
-            $('.playing-total-time').parent().addClass('has-error has-feedback');
+            $totalTime.parent().addClass('has-error has-feedback');
         } else {
-            $('.playing-total-time').parent().removeClass('has-error has-feedback');
+            $totalTime.parent().removeClass('has-error has-feedback');
         }
         return isError;
     }

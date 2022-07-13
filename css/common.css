@@ -14,14 +14,25 @@ footer {
     text-align: center;
     vertical-align: middle;
 }
+/* --- バージョン情報 --- */
+.version-area {
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+}
 .copyrights {
     color: black;
-    font-size: 25pt;
+    font-size: 15pt;
 }
 @media (max-width: 1000px) {
     .btn {
         min-height: 80px;
-        font-size: 20pt;
+        font-size: 25pt;
     }
     .btn > span > svg {
         width: 50px;
