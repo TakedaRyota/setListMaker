@@ -14,7 +14,6 @@ body {
 
 main {
     margin: 10px 20%;
-    padding: 10px;
 }
 a,
 .has-feedback > .glyphicon {
@@ -74,13 +73,9 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 /* --- ボタン --- */
-#complete-btn,
-#open-music-title-form,
-#other-form-btn,
-#open-form-top-btn {
-    width: 100%;
+#complete-btn {
     position: relative;
-    text-align: left;
+    text-align: center;
 }
 /* --- 表示していることを示す --- */
 .input-area-show {
@@ -114,12 +109,11 @@ input[type="number"] {
 }
 .badge-ok {
     display: none;
-    color: #ff0000 !important;
-    position: absolute !important;
-    top: 50% !important;
-    right: 5px;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
+    color: #ff0000;
+    width: fit-content;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
 }
 .input-number {
     width: 150px;
@@ -154,7 +148,34 @@ input[type="number"] {
     border-radius: 5px;
     border: 1px solid #15b60d;
 }
+.setting-btn-area {
+    display: inline-block;
+}
+.btn-option {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #15b60d;
+    color: #15b60d;
+    padding: 5px;
+    text-align: center;
+}
 
+@media (min-width: 1000px) {
+    .icon-option > svg {
+        width: 50px;
+        height: 50px;
+    }
+    .btn-option {
+        width: 30vw;
+        height: 80%;
+        text-align: center;
+        margin: 10px;
+    }
+    /* --- 完了ボタン --- */
+    #complete-btn {
+        width: 100%;
+    }
+}
 @media (max-width: 1000px) {
     main {
         margin: 0 10px;
@@ -193,5 +214,36 @@ input[type="number"] {
     .badge-ok,
     .badge-danger {
         font-size: 20pt;
+    }
+    .icon-option > svg {
+        width: 100px;
+        height: 100px;
+    }
+    .btn-option {
+        min-width: calc(50vw - 33px);
+        width: calc(50vw - 33px);
+        min-height: 500px;
+        height: 500px;
+        margin: 10px;
+        text-align: center;
+    }
+    .btn-option p {
+        font-size: 30pt;
+    }
+    /* --- 完了ボタン --- */
+    #complete-btn {
+        width: calc(100% - 20px);
+        height: 150px;
+        margin: 10px 10px;
+        font-size: 80px;
+    }
+    #complete-btn > span > svg {
+        width: 80px;
+        height: 80px;
+    }
+    /* --- 説明文 --- */
+    .explain-text {
+        font-size: 25pt;
+        padding: 0 0 0 10px;
     }
 }

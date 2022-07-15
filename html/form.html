@@ -29,7 +29,6 @@
     <link rel="stylesheet" type="text/css" href="../lib/css/uikit.min.css">
     <link rel="stylesheet" type="text/css" href="../lib/css/uikit-rtl.min.css">
     <link rel="stylesheet" type="text/css" href="../lib/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../lib/css/site.min.css">
     <link rel="stylesheet" type="text/css" href="../lib/css/bootflat.min.css">
     
     <!-- 画面ごとのCSS -->
@@ -42,23 +41,35 @@
         <!-- メイン画面 -->
         <div id="form-index">
             <div class="form-title">セットリストの作成</div>
-            <button id="open-form-top-btn" class="btn btn-success mb-3">
-                <span uk-icon="icon: info" class="me-2"></span>概要入力
-                <span class="badge badge-danger">必須</span>
-                <span class="badge badge-ok">OK</span>
-            </button>
-            <button id="open-music-title-form" class="btn btn-success mb-3">
-                <span uk-icon="icon: list" class="me-2"></span>セットリスト入力
-                <span class="badge badge-danger">必須</span>
-                <span class="badge badge-ok">OK</span>
-            </button>
-            <button id="other-form-btn" class="btn btn-success mb-4">
-                <span uk-icon="icon: comment" class="me-2"></span>その他入力
-                <span class="badge badge-ok">OK</span>
-            </button>
+            <!-- 設定項目ボタン -->
+            <div class="setting-btn-area">
+                <button id="open-form-top-btn" class="btn btn-success btn-option">
+                    <div uk-icon="icon: info" class="icon-option"></div>
+                    <p>概要入力
+                        <span class="badge badge-danger">必須</span>
+                    </p>
+                    <div class="badge badge-ok">OK</div>
+                </button>
+                <button id="open-music-title-form" class="btn btn-success btn-option">
+                    <div uk-icon="icon: list" class="icon-option"></div>
+                    <p>セットリスト入力
+                        <span class="badge badge-danger">必須</span>
+                    </p>
+                    <div class="badge badge-ok">OK</div>
+                </button>
+                <button id="other-form-btn" class="btn btn-success btn-option">
+                    <div uk-icon="icon: comment" class="icon-option"></div>
+                    <p>その他入力</p>
+                    <div class="badge badge-ok">OK</div>
+                </button>
+            </div>
+            
             <button id="complete-btn" class="btn btn-warning">
                 <span uk-icon="icon: forward" class="me-2"></span>完了
             </button>
+            <div class="explain-text">各入力に
+                <span class="badge badge-ok">OK</span>が表示されたら、完了できます。
+            </div>
         </div>
 
         <!-- 概要フォーム -->
@@ -202,7 +213,7 @@
             <div class="mb-2">
                 <img id="preview-img" src=""/>
             </div>
-            <div>※プレビューを長押しで画像として保存できます。</div>
+            <div class="explain-text">※プレビューを長押しで画像として保存できます。</div>
             <div class="output-btn-area">
                 <div class="row">
                     <div class="col-md-6">
