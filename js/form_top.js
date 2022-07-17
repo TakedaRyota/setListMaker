@@ -11,7 +11,7 @@ $(function () {
      */
     $('#form-top-save-btn').on('click', function () {
         if (isInvalidError()) return;
-        $('#open-form-top-btn').children('.badge-ok').show();
+        $('#open-form-top-btn').children('.badge-ok').css({'visibility':'visible'});
         $formTopView.hide();
         $indexView.show();
     });

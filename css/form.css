@@ -114,13 +114,10 @@ input[type="number"] {
     background-color: #bcb6ff !important;
 }
 .badge-ok {
-    display: none;
+    visibility: hidden;
     color: #ffffff;
     background-color: orange;
     width: fit-content;
-    left: 50%;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
 }
 .input-number {
     width: 150px;
@@ -182,6 +179,9 @@ input[type="number"] {
     padding: 5px;
     text-align: center;
 }
+.explain-text > .badge-ok {
+    visibility: visible;
+}
 
 @media (min-width: 1000px) {
     main {
@@ -211,10 +211,6 @@ input[type="number"] {
     /* --- 説明文 --- */
     .explain-text {
         padding: 0 0 0 10px;
-    }
-    .explain-text > .badge-ok {
-        display: block;
-        margin-left: 30px;
     }
 }
 @media (max-width: 1000px) {
@@ -265,7 +261,7 @@ input[type="number"] {
         min-width: calc(50vw - 33px);
         width: calc(50vw - 33px);
         min-height: 33vh;
-        height: 33vh;
+        height: fit-content;
         margin: 10px;
         text-align: center;
     }
@@ -288,8 +284,5 @@ input[type="number"] {
         font-size: 25pt;
         padding: 0 0 0 10px;
     }
-    .explain-text > .badge-ok {
-        display: block;
-        margin-left: 60px;
-    }
+    
 }

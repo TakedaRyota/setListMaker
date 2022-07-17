@@ -13,3 +13,38 @@ $(function () {
     document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 });
+
+/**
+ * 0を付加
+ * @param {Number} number 
+ * @returns 
+ */
+function zeroPadded(number) {
+    number = String(number);
+    if (number.length == 1) {
+        return `0${number}`;
+    }
+    return number;
+}
+
+/**
+ * 開催日を出力します
+ * @param {Date} date 
+ * @returns 
+ */
+function getOpenDate(date) {
+    if (date != ''){
+        date = new Date(date);
+        return `${date.getFullYear()}年${zeroPadded(date.getMonth() + 1)}月${zeroPadded(date.getDate())}日`;
+    }
+    return '';
+}
+
+/**
+ * 日時の表記を変更
+ * @param {Date} dateTime 
+ * @returns YYYY/MM/DD hh:mm:00
+ */
+function changeDateTime(dateTime) {
+    return `${dateTime.getFullYear()}/${zeroPadded(dateTime.getMonth() + 1)}/${zeroPadded(dateTime.getDate())} ${zeroPadded(dateTime.getHours())}:${zeroPadded(dateTime.getMinutes())}:00`;
+}

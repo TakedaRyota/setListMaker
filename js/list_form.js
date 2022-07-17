@@ -13,7 +13,7 @@ $(function () {
      * リスト保存ボタン押下時
      */
     $('#set-list-save-btn').on('click', function () {
-        $('#open-music-title-form').children('.badge-ok').show();
+        $('#open-music-title-form').children('.badge-ok').css({'visibility':'visible'});
         $musicTitleListView.hide();
         $indexView.show();
     });
