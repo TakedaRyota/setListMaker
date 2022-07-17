@@ -75,7 +75,9 @@
 }
 #list-table-view .music-title-cell {
     min-height: 30px;
+    max-width: 30vw;
     overflow: hidden;
+    overflow-wrap: anywhere;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
@@ -85,7 +87,7 @@
 }
 
 #list-table-head > tr > th:nth-child(2) {
-    width: 151px;
+    width: 30vw;
 }
 #list-table-head > tr > th:nth-child(3) {
     width: 50px;

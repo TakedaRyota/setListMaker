@@ -12,9 +12,6 @@ body {
     min-height: calc(var(--vh, 1vh) * 100);
 }
 
-main {
-    margin: 10px 20%;
-}
 a,
 .has-feedback > .glyphicon {
     display: block;
@@ -26,6 +23,9 @@ a,
 #output-view,
 .glyphicon  {
     display: none;
+}
+#music-title-form {
+    width: calc(100vw - 100px);
 }
 .save-btn {
     margin-left: auto;
@@ -72,7 +72,7 @@ input[type="number"]::-webkit-inner-spin-button {
 input[type="number"] {
     -moz-appearance: textfield;
 }
-/* --- ボタン --- */
+/* --- 完了ボタン --- */
 #complete-btn {
     position: relative;
     text-align: center;
@@ -98,6 +98,12 @@ input[type="number"] {
 }
 .detail-view-btn {
     position: relative;
+    overflow-wrap: anywhere;
+    padding-right: 10px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
 }
 .detail-view-btn>.remove-btn {
     display: none;
@@ -109,7 +115,8 @@ input[type="number"] {
 }
 .badge-ok {
     display: none;
-    color: #ff0000;
+    color: #ffffff;
+    background-color: orange;
     width: fit-content;
     left: 50%;
     transform: translateX(-50%);
@@ -123,10 +130,15 @@ input[type="number"] {
     background-color: #da4453 !important;
     color: #ffffff !important;
 }
-
+.badge-ok,
+.badge-danger {
+    margin: 5px 0;
+    padding: 5px 10px;
+}
 .output-btn-area .btn {
     width: 100%;
     margin-bottom: 10px;
+    padding: 30px 0;
     background-color: #ffffff;
     border-color: #15b60d;
     color: #15b60d;
@@ -147,11 +159,22 @@ input[type="number"] {
     background-color: #ffffff;
     border-radius: 5px;
     border: 1px solid #15b60d;
+    color: #15b60d;
+}
+.start-position-input:hover,
+.playing-time-input:hover {
+    white-space: nowrap;
+    padding: 0 10px;
+    background-color: #15b60d;
+    border-radius: 5px;
+    border: 1px solid #15b60d;
+    color: #ffffff;
 }
 .setting-btn-area {
-    display: inline-block;
+    text-align: center;
 }
 .btn-option {
+    display: inline-block;
     background-color: #ffffff;
     border-radius: 10px;
     border: 1px solid #15b60d;
@@ -161,25 +184,44 @@ input[type="number"] {
 }
 
 @media (min-width: 1000px) {
+    main {
+        min-height: 100vh;
+        padding: 10px 10px 50px 10px;
+    }
     .icon-option > svg {
         width: 50px;
         height: 50px;
     }
     .btn-option {
         width: 30vw;
-        height: 80%;
+        height: 70vh;
         text-align: center;
         margin: 10px;
     }
     /* --- 完了ボタン --- */
     #complete-btn {
         width: 100%;
+        height: 60px;
+        font-size: 30px;
+    }
+    #complete-btn > span > svg {
+        width: 40px;
+        height: 40px;
+    }
+    /* --- 説明文 --- */
+    .explain-text {
+        padding: 0 0 0 10px;
+    }
+    .explain-text > .badge-ok {
+        display: block;
+        margin-left: 30px;
     }
 }
 @media (max-width: 1000px) {
     main {
-        margin: 0 10px;
-        padding-bottom: 50px;
+        height: fit-content;
+        min-height: 100vh;
+        padding: 10px 10px 50px 10px;
     }
     .input-area {
         min-width: 300px;
@@ -222,8 +264,8 @@ input[type="number"] {
     .btn-option {
         min-width: calc(50vw - 33px);
         width: calc(50vw - 33px);
-        min-height: 500px;
-        height: 500px;
+        min-height: 33vh;
+        height: 33vh;
         margin: 10px;
         text-align: center;
     }
@@ -245,5 +287,9 @@ input[type="number"] {
     .explain-text {
         font-size: 25pt;
         padding: 0 0 0 10px;
+    }
+    .explain-text > .badge-ok {
+        display: block;
+        margin-left: 60px;
     }
 }
