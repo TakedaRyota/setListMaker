@@ -224,16 +224,17 @@
                         </button>
                     </div>
                     <div class="col-md-6">
-                        <button id="output-csv-btn" class="btn btn-outline-success">
-                            <span uk-icon="icon: file-text"></span>csv出力
+                        <button id="send-mail-btn" class="btn btn-outline-success">
+                            <span uk-icon="icon: mail"></span>電子メール
                         </button>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <button id="send-mail-btn" class="btn btn-outline-success">
-                            <span uk-icon="icon: mail"></span>電子メール
+                        <button id="output-csv-btn" class="btn btn-outline-success">
+                            <span uk-icon="icon: file-text"></span>csv出力
                         </button>
+                        <a id="output-csv-href" style="display: none;"></a>
                     </div>
                 </div>
                 <div class="row">
@@ -258,7 +259,7 @@
                 <span>出力日:</span>
                 <span id="output-date"></span>
             </div>
-            <table class="mb-2">
+            <table id="guide-line-table" class="mb-2">
                 <tbody>
                     <tr>
                         <th class="col-width-fix height-max">イベント名</th>
@@ -285,7 +286,7 @@
                 </tbody>
             </table>
 
-            <table class="mb-2">
+            <table id="list-table" class="mb-2">
                 <thead id="list-table-head">
                     <tr>
                         <th>#</th>
