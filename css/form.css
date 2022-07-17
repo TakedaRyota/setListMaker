@@ -185,7 +185,7 @@ input[type="number"] {
 
 @media (min-width: 1000px) {
     main {
-        min-height: 100vh;
+        min-height: calc(var(--vh, 1vh) * 100);
         padding: 10px 10px 50px 10px;
     }
     .icon-option > svg {
@@ -220,7 +220,7 @@ input[type="number"] {
 @media (max-width: 1000px) {
     main {
         height: fit-content;
-        min-height: 100vh;
+        min-height: calc(var(--vh, 1vh) * 100);
         padding: 10px 10px 50px 10px;
     }
     .input-area {
