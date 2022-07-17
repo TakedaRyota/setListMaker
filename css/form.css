@@ -183,6 +183,10 @@ input[type="number"] {
 .explain-text > .badge-ok {
     visibility: visible;
 }
+.explain-text-warning {
+    background-color: yellow;
+    color: #da4453;
+}
 
 @media (min-width: 1000px) {
     main {
