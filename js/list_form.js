@@ -13,7 +13,7 @@ $(function () {
      * リスト保存ボタン押下時
      */
     $('#set-list-save-btn').on('click', function () {
-        $('#open-music-title-form').children('.badge-ok').show();
+        $('#open-music-title-form').children('.badge-ok').css({'visibility':'visible'});
         $musicTitleListView.hide();
         $indexView.show();
     });
@@ -76,8 +76,8 @@ $(function () {
                     <span class="badge badge-danger">必須</span>
                 </div>
                 <div class="d-flex mb-2">
-                    <button class="start-position-input me-2">音先行</button>
-                    <button class="start-position-input">板付</button>
+                    <button class="start-position-input me-2" disabled>音先行</button>
+                    <button class="start-position-input" disabled>板付</button>
                 </div>
                 <div class="">
                     <textarea class="start-position-text form-control mb-2" rows="2" placeholder="音先行/板付など" required></textarea>

@@ -13,10 +13,6 @@ $(function () {
     const $outputView = $('#output-view'); // 出力画面
     let base64;
 
-    /* 高さvhの調整 */
-    const vh = $(window).height() * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-
     /**
      * 概要入力ボタン押下時
      */
@@ -45,9 +41,9 @@ $(function () {
      * 完了ボタン押下時
      */
     $('#complete-btn').on('click', function () {
-        if ($('#open-form-top-btn').children('.badge-ok').is(':visible') &&
-            $('#open-music-title-form').children('.badge-ok').is(':visible') &&
-            $('#other-form-btn').children('.badge-ok').is(':visible')) {
+        if ($('#open-form-top-btn').children('.badge-ok').css('visibility')=='visible' &&
+            $('#open-music-title-form').children('.badge-ok').css('visibility')=='visible' &&
+            $('#other-form-btn').children('.badge-ok').css('visibility')=='visible') {
                 $('#list-table-view').show();
                 
                 outputTable(); // 出力テーブルの生成
@@ -174,39 +170,5 @@ $(function () {
         $outputView.hide();
         $indexView.show();
     });
-
-    /**
-     * 日時の表記を変更
-     * @param {Date} dateTime 
-     * @returns YYYY/MM/DD hh:mm:00
-     */
-    function changeDateTime(dateTime) {
-        return `${dateTime.getFullYear()}/${zeroPadded(dateTime.getMonth() + 1)}/${zeroPadded(dateTime.getDate())} ${zeroPadded(dateTime.getHours())}:${zeroPadded(dateTime.getMinutes())}:00`;
-    }
-
-    /**
-     * 開催日を出力します
-     * @param {Date} date 
-     * @returns 
-     */
-    function getOpenDate(date) {
-        if (date != ''){
-            date = new Date(date);
-            return `${date.getFullYear()}年${zeroPadded(date.getMonth() + 1)}月${zeroPadded(date.getDate())}日`;
-        }
-        return '';
-    }
-
-    /**
-     * 0を付加
-     * @param {Number} number 
-     * @returns 
-     */
-    function zeroPadded(number) {
-        number = String(number);
-        if (number.length == 1) {
-            return `0${number}`;
-        }
-        return number;
-    }
+ 
 });

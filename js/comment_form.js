@@ -10,7 +10,7 @@ $(function () {
      * コメント保存ボタン押下時
      */
     $('#other-comment-save-btn').on('click', function () {
-        $('#other-form-btn').children('.badge-ok').show();
+        $('#other-form-btn').children('.badge-ok').css({'visibility':'visible'});
         $otherCommentView.hide();
         $indexView.show();
     });
