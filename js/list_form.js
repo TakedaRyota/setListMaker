@@ -76,8 +76,8 @@ $(function () {
                     <span class="badge badge-danger">必須</span>
                 </div>
                 <div class="d-flex mb-2">
-                    <button class="start-position-input me-2" disabled>音先行</button>
-                    <button class="start-position-input" disabled>板付</button>
+                    <button class="start-position-input me-2" type="button">音先行</button>
+                    <button class="start-position-input" type="button">板付</button>
                 </div>
                 <div class="">
                     <textarea class="start-position-text form-control mb-2" rows="2" placeholder="音先行/板付など" required></textarea>
@@ -119,6 +119,19 @@ $(function () {
     });
 
     /**
+     * 曲削除ボタン押下時
+     */
+    $('#detail-delete-btn').on('click', function () {
+        const $showListObj = $('.input-area-show');
+        const listId = $showListObj.attr('data-list-id');
+        $showListObj.remove();
+        $(`#set-list-title-${listId}`).parent().parent().remove();
+        $musicDetailView.hide();
+        $musicTitleListView.show();
+        $('#delete-cfm-modal').modal('hide');
+    });
+
+    /**
      * フォームのエラーチェック
      * @returns {Boolean}
      */
@@ -141,6 +154,7 @@ $(function () {
         }
         return isError;
     }
+
     /**
      * 音先行ボタン押下時
      */

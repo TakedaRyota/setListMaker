@@ -26,12 +26,8 @@ main {
     margin: 0 5%;
 }
 #advertisement-area {
-text-align: center;
-}
-#advertisement-link {
-    min-width: 50%;
-    width: 40%;
-    height: 100%;
+    display: none;
+    text-align: center;
 }
 .center-middle {
     position: absolute;

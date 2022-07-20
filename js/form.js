@@ -82,7 +82,7 @@ $(function () {
      */
     $('#send-mail-btn').on('click', function () {
         const subject = `セットリスト送付　${$('#artist-name-input').val()}`;
-        const body = 'はじめにpdf出力でダウンロードしてください。ダウンロードしたファイルを添付できます。こちらは削除してください。/n';
+        const body = 'はじめにpdf出力でダウンロードしてください。ダウンロードしたファイルを添付できます。こちらは削除してください。';
         location.href = 'mailto:?subject=' + subject + '&body=' + body;
     });
 

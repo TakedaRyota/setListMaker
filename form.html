@@ -5,36 +5,36 @@
     <title>セットリストメーカー</title>
     <!--このファイルはフォーム入力画面-->
     <!--ファビコン-->
-    <link rel="icon" href="../favicon.ico">
+    <link rel="icon" href="./favicon.ico">
     <!--このファイルはトップ画面のみ-->
-    <script src="../lib/js/jquery-3.6.0.min.js"></script>
-    <script src="../lib/js/icheck.min.js"></script>
-    <script src="../lib/js/jquery.fs.selecter.min.js"></script>
-    <script src="../lib/js/jquery.fs.stepper.min.js"></script>
-    <script src="../lib/js/bootstrap.min.js"></script>
-    <script src="../lib/js/uikit.min.js"></script>
-    <script src="../lib/js/uikit-icons.min.js"></script>
-    <script src="../lib/js/jspdf.umd.min.js"></script>
-    <script src="../lib/js/html2canvas.min.js"></script>
-    <script src="../lib/js/html2pdf.min.js"></script>
-    <script src="../lib/js/html2pdf.bundle.min.js"></script>
+    <script src="./lib/js/jquery-3.6.0.min.js"></script>
+    <script src="./lib/js/icheck.min.js"></script>
+    <script src="./lib/js/jquery.fs.selecter.min.js"></script>
+    <script src="./lib/js/jquery.fs.stepper.min.js"></script>
+    <script src="./lib/js/bootstrap.min.js"></script>
+    <script src="./lib/js/uikit.min.js"></script>
+    <script src="./lib/js/uikit-icons.min.js"></script>
+    <script src="./lib/js/jspdf.umd.min.js"></script>
+    <script src="./lib/js/html2canvas.min.js"></script>
+    <script src="./lib/js/html2pdf.min.js"></script>
+    <script src="./lib/js/html2pdf.bundle.min.js"></script>
 
     <!-- 画面ごとのjs -->
-    <script src="../js/common.js"></script>
-    <script src="../js/form.js"></script>
-    <script src="../js/form_top.js"></script>
-    <script src="../js/list_form.js"></script>
-    <script src="../js/comment_form.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/form.js"></script>
+    <script src="./js/form_top.js"></script>
+    <script src="./js/list_form.js"></script>
+    <script src="./js/comment_form.js"></script>
     <!-- スタイルシートはココに入れる -->
-    <link rel="stylesheet" type="text/css" href="../lib/css/uikit.min.css">
-    <link rel="stylesheet" type="text/css" href="../lib/css/uikit-rtl.min.css">
-    <link rel="stylesheet" type="text/css" href="../lib/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../lib/css/bootflat.min.css">
+    <link rel="stylesheet" type="text/css" href="./lib/css/uikit.min.css">
+    <link rel="stylesheet" type="text/css" href="./lib/css/uikit-rtl.min.css">
+    <link rel="stylesheet" type="text/css" href="./lib/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./lib/css/bootflat.min.css">
     
     <!-- 画面ごとのCSS -->
-    <link rel="stylesheet" type="text/css" href="../css/common.css">
-    <link rel="stylesheet" type="text/css" href="../css/form.css">
-    <link rel="stylesheet" type="text/css" href="../css/output_data.css">
+    <link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/form.css">
+    <link rel="stylesheet" type="text/css" href="./css/output_data.css">
 </head>
 <body>    
     <main>
@@ -190,6 +190,9 @@
                 
             </div>
             <div class="d-flex">
+                <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#delete-cfm-modal">
+                    <span uk-icon="icon: trash"></span>削除
+                </button>
                 <button id="detail-save-btn" class="save-btn btn btn-success" type="button">
                     <span uk-icon="icon: check"></span>保存
                 </button>
@@ -309,6 +312,28 @@
             <!-- Copyrights -->
             <div class="text-center mt-3">This form is created by SET LIST MAKER.</div>
 
+        </div>
+
+        <!-- 削除確認モーダル -->
+        <div class="modal fade" id="delete-cfm-modal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title input-label">確認</h5>
+                    </div>
+                    <div class="modal-body input-label">
+                        本当に削除してよろしいですか？
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            <span uk-icon="icon: close"></span>キャンセル
+                        </button>
+                        <button id="detail-delete-btn" type="button" class="btn btn-danger">
+                            <span uk-icon="icon: trash"></span>削除
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     <!-- version情報 -->
