@@ -42,26 +42,35 @@
         <div id="form-index">
             <div class="form-title">セットリストの作成</div>
             <!-- 設定項目ボタン -->
-            <div class="setting-btn-area">
-                <button id="open-form-top-btn" class="btn btn-success btn-option">
-                    <div uk-icon="icon: info" class="icon-option"></div>
-                    <p>概要入力
-                        <span class="badge badge-danger">必須</span>
-                    </p>
-                    <div class="badge badge-ok">OK</div>
-                </button>
-                <button id="open-music-title-form" class="btn btn-success btn-option">
-                    <div uk-icon="icon: list" class="icon-option"></div>
-                    <p>セットリスト入力
-                        <span class="badge badge-danger">必須</span>
-                    </p>
-                    <div class="badge badge-ok">OK</div>
-                </button>
-                <button id="other-form-btn" class="btn btn-success btn-option">
-                    <div uk-icon="icon: comment" class="icon-option"></div>
-                    <p>その他入力</p>
-                    <div class="badge badge-ok">OK</div>
-                </button>
+            <div class="setting-btn-area container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <button id="open-form-top-btn" class="btn btn-success btn-option col-4">
+                            <div uk-icon="icon: info" class="icon-option"></div>
+                            <div class="form-title">概要入力
+                                <span class="badge badge-danger">必須</span>
+                            </div>
+                            <div class="badge badge-ok">OK</div>
+                        </button>
+                    </div>
+                    <div class="col-md-4">
+                        <button id="open-music-title-form" class="btn btn-success btn-option col-4">
+                            <div uk-icon="icon: list" class="icon-option"></div>
+                            <div class="form-title">セットリスト入力
+                                <span class="badge badge-danger">必須</span>
+                            </div>
+                            <div class="badge badge-ok">OK</div>
+                        </button>
+                    </div>
+                    <div class="col-md-4">
+                        <button id="other-form-btn" class="btn btn-success btn-option col-4">
+                            <div uk-icon="icon: comment" class="icon-option"></div>
+                            <div class="form-title">その他入力</div>
+                            <div class="badge badge-ok">OK</div>
+                        </button>
+                    </div>
+                </div>
+                
             </div>
             
             <button id="complete-btn" class="btn btn-warning">
@@ -145,16 +154,14 @@
         <div id="music-title-list-view">
             <div class="form-title">曲順リスト</div>
             <div class="explain-text-warning explain-text">リスト順（MC等込み）に追加してください。</div>
-            <div class="input-group mb-2">
-                <div class="">
-                    <input type="text" id="music-title-form" class="form-control" placeholder="曲のタイトル,MC"/>
-                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-                </div>
-                <div class="input-group-btn">
-                    <button type="button" id="add-music-btn" class="btn btn-danger">
-                        <span uk-icon="icon: plus-circle" class="plus-circle"></span>
-                    </button>
-                </div>
+            <div class="">
+                <input type="text" id="music-title-form" class="form-control" placeholder="曲のタイトル,MC"/>
+                <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+            </div>
+            <div class="text-center">
+                <button type="button" id="add-music-btn" class="btn btn-danger">
+                    <span uk-icon="icon: plus-circle" class="plus-circle"></span>追加
+                </button>
             </div>
             
 

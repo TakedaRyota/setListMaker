@@ -6,7 +6,13 @@
 html,
 body {
     width: 100%;
+    min-height: calc(var(--vh, 1vh) * 100);
     background-color: #c6f3ff;
+    position: relative;
+}
+main {
+    margin: 0;
+    padding: 0px 0px 50px 0px;
 }
 /* --- Copyright --- */
 footer {
@@ -29,13 +35,38 @@ footer {
     color: black;
     font-size: 15pt;
 }
-@media (max-width: 1000px) {
+h3 {
+    margin: 15px 0 0 0;
+}
+.container {
+    width: 100%;
+    max-width: 100%;
+}
+.btn > div > svg,
+.btn > span > svg {
+    width: 5vw;
+    height: 5vw;
+}
+
+@media (min-width: 1000px) {
+    .form-control,
     .btn {
-        min-height: 80px;
-        font-size: 25pt;
+        font-size: 3vw;
+        margin-bottom: 10px;
     }
+}
+@media (max-width: 1000px) {
+    .row > * {
+        width: 100%;
+    }
+    .form-control,
+    .btn {
+        font-size: 5vw;
+        margin-bottom: 10px;
+    }
+    .btn > div > svg,
     .btn > span > svg {
-        width: 50px;
-        height: 50px;
+        min-width: 80px;
+        min-height: 80px;
     }
 }

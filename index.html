@@ -2,6 +2,10 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="セットリスト作成ツールです。EXCELいらずでスマホで作成できるのが特徴です。画像やpdfで保存ができます。">
     <title>セットリストメーカー</title>
     <!--ファビコン-->
     <link rel="icon" href="./favicon.ico">
@@ -17,17 +21,18 @@
     <script src="./js/index.js"></script>
     <!-- スタイルシートはココに入れる -->
     <link rel="stylesheet" type="text/css" href="./lib/css/uikit.min.css">
-    <link rel="stylesheet" type="text/css" href="./lib/css/uikit-rtl.min.css">
     <link rel="stylesheet" type="text/css" href="./lib/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./lib/css/bootflat.min.css">
     <!-- 画面ごとのCSS -->
     <link rel="stylesheet" type="text/css" href="./css/common.css">
     <link rel="stylesheet" type="text/css" href="./css/index.css">
+
+    
 </head>
 <body>    
     <main>
         <div id="top-page">
-            <div id="title-area" class="mb-3 mt-3">
+            <div id="title-area" class="mb-3">
                 <img src="./image/top_image.png" alt="トップイメージ">
             </div>
             <button id="make-btn" class="btn btn-info" onclick="location.href='./form.html'"><span uk-icon="pencil"></span>作成する</button>
@@ -35,19 +40,49 @@
             <div id="info-area">
                 <h4 class="m-0">改訂履歴</h4>
                 <ul>
-                    <li>2022.07.12 入力補完ボタン追加 ver.0.0.3</li>
-                    <li>2022.07.12 pdf出力機能追加 ver.0.0.4</li>
-                    <li>2022.07.16 キッカケの入力補完機能一時停止 ver.0.0.5</li>
-                    <li>2022.07.16 ボタンのUI変更 ver.0.1.0</li>
-                    <li>2022.07.17 レスポンシブ修正 ver.0.1.1</li>
                     <li>2022.07.17 デバッグ版(サブリリース版) ver.0.7.0</li>
                     <li>2022.07.19 url変更ver.0.7.2</li>
+                    <li>2022.07.20 スマホ表示ボタン変更 ver.0.7.3</li>
                 </ul>
             </div>
-            <!-- 広告 -->
-            <div id="advertisement-area">
-                <img src="./image/advertise_offer.png"/>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>作成手順</h3>
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                <div class="ms-2 me-auto">
+                                    <div class="fw-bold">概要入力</div>
+                                    イベント概要、アーティスト情報の入力
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                <div class="ms-2 me-auto">
+                                    <div class="fw-bold">セットリスト入力</div>
+                                    楽曲情報、音響の要望、照明の要望などの入力
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                <div class="ms-2 me-auto">
+                                    <div class="fw-bold">その他入力</div>
+                                    その他、特記事項などの入力
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                <div class="ms-2 me-auto">
+                                    <div class="fw-bold">完了（出力）</div>
+                                    画像、pdf形式で保存ができます。
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>出力イメージ</h3>
+                        <img alt="Sample" src="./image/Sample.PNG"/>
+                    </div>
+                </div>
             </div>
+            
         </div>
     </main>
     <div class="version-area">

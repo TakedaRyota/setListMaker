@@ -2,45 +2,10 @@
 このファイルはindex.htmlに適用するスタイルシート 
 ============================================= */
 
-html,
-body {
-    min-height: 100vh;
-    min-height: calc(var(--vh, 1vh) * 100);
-    position: relative;
-}
-main {
-    margin: 0 20%;
-    padding: 10px 10px 50px 10px;
-}
-#top-page {
-    width: 100%;
-    height: calc(100% - 36px - 40%);
-}
-#title-area {
-    text-align: center;
-    position: relative;
-    padding: 0 200px;
-}
 #make-btn {
-    width: 90%;
-    margin: 0 5%;
-}
-#advertisement-area {
-    display: none;
-    text-align: center;
-}
-.center-middle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    -webkit-transform: translateY(-50%) translateX(-50%);
+    width: 60%;
+    margin: 0 20%;
 }
 #info-area {
-    padding: 5px 5%;
-}
-@media (max-width: 1000px) {
-    main {
-        margin: 0 10px;
-    }
+    padding: 15px 20%;
 }
