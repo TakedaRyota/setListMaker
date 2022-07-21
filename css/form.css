@@ -97,7 +97,7 @@ input[type="number"] {
 .detail-view-btn {
     position: relative;
     overflow-wrap: anywhere;
-    padding: 0 10px 0 0 !important;
+    padding: 3px 20px 3px 0 !important;
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -189,11 +189,14 @@ input[type="number"] {
 #music-list-table > thead > tr > th,
 #music-list-table > tbody > tr > td {
     padding: 0 5px;
+    vertical-align: middle;
 }
 .explain-text {
     font-size: 80%;
 }
-
+#output-view {
+    margin-top: 10px;
+}
 @media (min-width: 1000px) {
     .icon-option > svg {
         width: 50px;

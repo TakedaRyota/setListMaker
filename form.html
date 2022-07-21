@@ -161,14 +161,14 @@
         <div id="music-title-list-view">
             <div class="form-title">曲順リスト</div>
             <div class="container">
-                <div class="explain-text-warning explain-text">リスト順（MC等込み）に追加してください。</div>
+                <div class="explain-text-warning explain-text">リスト順（MC,SE等込み）に追加してください。</div>
                 <div class="">
-                    <input type="text" id="music-title-form" class="form-control" placeholder="曲のタイトル,MC"/>
+                    <input type="text" id="music-title-form" class="form-control" placeholder="曲のタイトル,MC,SE"/>
                     <span uk-icon="icon: warning" class="form-control-feedback"></span>
                 </div>
                 <div class="text-center">
                     <button type="button" id="add-music-btn" class="btn btn-danger mb-2">
-                        <span uk-icon="icon: plus-circle" class="plus-circle"></span>追加
+                        <span uk-icon="icon: plus-circle" class="plus-circle"></span>曲の追加
                     </button>
                 </div>
                 
@@ -220,8 +220,8 @@
         <div id="other-comment-view">
             <div class="form-title">その他自由記載欄</div>
             <div class="container">
-                <textarea id="other-comment-input" class="form-control mb-2" rows="6" placeholder="ご自由に入力してください。"></textarea>
-                <div class="explain-text">※無記入でも保存できます。</div>
+                <textarea id="other-comment-input" class="form-control" rows="6" placeholder="ご自由に入力してください。"></textarea>
+                <div class="explain-text mb-2">※無記入でも保存できます。</div>
                 <div class="d-flex">
                     <button id="detail-back-btn" class="btn btn-success" type="button">
                         <span uk-icon="icon: arrow-left"></span>戻る
@@ -235,12 +235,16 @@
 
         <!-- 完了画面 -->
         <div id="output-view">
-            <!-- プレビュー画像の表示 -->
-            <div class="mb-2">
-                <img id="preview-img" src=""/>
-            </div>
-            <div class="explain-text">※プレビューを長押しで画像として保存できます。</div>
-            <div class="output-btn-area">
+            <div class="output-btn-area container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- プレビュー画像の表示 -->
+                        <div class="mb-2">
+                            <img id="preview-img" src=""/>
+                        </div>
+                        <div class="explain-text">※プレビューを長押しで画像として保存できます。</div>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-md-6">
                         <button id="output-pdf-btn" class="btn btn-outline-success">
@@ -302,9 +306,9 @@
                     <tr>
                         <th class="col-width-fix">メンバー数</th>
                         <td id="member-num-cell"></td>
-                        <th>マイク本数</th>
+                        <th class="title-cel-width">マイク本数</th>
                         <td id="mic-num-cell"></td>
-                        <th>演奏時間</th>
+                        <th class="title-cel-width">演奏時間</th>
                         <td id="playing-time-cell"></td>
                     </tr>
                 </tbody>

@@ -77,7 +77,8 @@ $(function () {
                 </div>
                 <div class="d-flex mb-2">
                     <button class="start-position-input me-2" type="button">音先行</button>
-                    <button class="start-position-input" type="button">板付</button>
+                    <button class="start-position-input me-2" type="button">板付</button>
+                    <button class="start-position-input" type="button">おまかせ</button>
                 </div>
                 <div class="">
                     <textarea class="start-position-text form-control mb-2" rows="2" placeholder="音先行/板付など" required></textarea>

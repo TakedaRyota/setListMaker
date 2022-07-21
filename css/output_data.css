@@ -2,15 +2,12 @@
 出力するテーブルに適用するスタイルシート
 ============================================= */
 
-
 #list-table-view {
     display: none;
-    min-width: 650px;
+    width: 1000px;
+    min-width: 1000px;
     padding: 10px;
     background-color: #ffffff;
-}
-#list-table-view > * {
-    font-size: 0.2vw;
 }
 #output-title {
     font-size: large;
@@ -24,7 +21,17 @@
     font-weight: bold;
     font-size: medium;
 }
-
+#list-table-view .col-width-fix {
+    width: 200px;
+}
+#list-table-view .title-cel-width {
+    width: 130px;
+}
+#member-num-cell,
+#mic-num-cell,
+#playing-time-cell {
+    width: 180px;
+}
 #list-table-view .name-area {
     font-size: large;
 }
@@ -47,18 +54,19 @@
     padding: 0;
 }
 #list-table-view .time-label {
-    margin: 0;
+    margin: 0 5px;
     text-align: center;
     width: calc(100% - 50px);
 }
 #list-table-view .time-area {
-    padding: 0 5px;
+    padding: 0;
     border-top: 1px solid #000000;
-    color: #ffffff;
-    background-color: #000000;
 }
-#list-table-view .time-area span {
+#list-table-view .time-area .time-title-label {
     font-weight: bold;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 0 5px;
 }
 #list-table-view .other-title {
     width: fit-content;
@@ -78,8 +86,9 @@
 #preview-img > img {
     width: auto;
 }
-#event-title-cell {
-    min-height: 150px;
+#event-title-cell,
+#artist-name-cell {
+    height: 40px;
     font-size: large;
     font-weight: bold;
     padding: 20px;
@@ -96,21 +105,30 @@
     text-align: center;
 }
 #list-table-head > tr > th:nth-child(1) {
-    width: 15px;
+    width: 20px;
 }
 #list-table-head > tr > th:nth-child(2) {
-    width: 50vw;
+    width: 300px;
 }
 #list-table-head > tr > th:nth-child(3) {
-    width: 30px;
+    width: 60px;
 }
 #list-table-head > tr > th:nth-child(4) {
-    width: 50px;
+    width: 100px;
+}
+#list-table-head > tr > th:nth-child(5),
+#list-table-head > tr > th:nth-child(6) {
+    width: 250px;
 }
 
 #list-row-table tr > td:nth-child(3),
 #list-row-table tr > td:nth-child(4) {
     text-align: center;
+}
+#other-comment-cell,
+#list-row-table tr > td:nth-child(5),
+#list-row-table tr > td:nth-child(6) {
+    white-space: pre-wrap;
 }
 #guide-line-table > tbody > tr {
     height: 25px;
