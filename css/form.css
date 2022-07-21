@@ -38,14 +38,10 @@ a,
     transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
 }
-.list-icon > svg {
-    width: 50px;
-    height: 50px;
-}
 .input-area {
     min-width: 300px;
     padding: 10px;
-    margin: 5px;
+    margin: 5px 5px 10px 5px;
     border-radius: 5px;
     box-shadow: 1px 1px 2px 0rem gray;
 }
@@ -58,7 +54,7 @@ a,
 .form-title {
     display: block !important;
     font-weight: bold;
-    font-size: 20pt;
+    font-size: 150%;
 }
 /* --- Chrome, Safari対応 --- */
 input[type="number"]::-webkit-outer-spin-button,
@@ -74,6 +70,10 @@ input[type="number"] {
 #complete-btn {
     position: relative;
     text-align: center;
+}
+/* --- 曲追加ボタンボタン --- */
+#add-music-btn {
+    width: 100%;
 }
 /* --- 表示していることを示す --- */
 .input-area-show {
@@ -97,7 +97,7 @@ input[type="number"] {
 .detail-view-btn {
     position: relative;
     overflow-wrap: anywhere;
-    padding-right: 10px;
+    padding: 0 10px 0 0 !important;
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -117,10 +117,6 @@ input[type="number"] {
     background-color: orange;
     width: fit-content;
 }
-.input-number {
-    width: 150px;
-    min-width: 150px;
-}
 .badge-danger {
     background-color: #da4453 !important;
     color: #ffffff !important;
@@ -133,7 +129,6 @@ input[type="number"] {
 .output-btn-area .btn {
     width: 100%;
     margin-bottom: 10px;
-    padding: 30px 0;
     background-color: #ffffff;
     border-color: #15b60d;
     color: #15b60d;
@@ -164,9 +159,11 @@ input[type="number"] {
 }
 .setting-btn-area {
     text-align: center;
+    margin-bottom: 10px;
 }
 .btn-option {
     width: 100%;
+    height: 100%;
     background-color: #ffffff;
     border-radius: 10px;
     border: 1px solid #15b60d;
@@ -185,12 +182,19 @@ input[type="number"] {
 #complete-btn {
     width: 100%;
 }
+.panel {
+    height: calc(100vh - 250px);
+    overflow: scroll;
+}
+#music-list-table > thead > tr > th,
+#music-list-table > tbody > tr > td {
+    padding: 0 5px;
+}
+.explain-text {
+    font-size: 80%;
+}
 
 @media (min-width: 1000px) {
-    main {
-        min-height: calc(var(--vh, 1vh) * 100);
-        padding: 10px 10px 50px 10px;
-    }
     .icon-option > svg {
         width: 50px;
         height: 50px;
@@ -200,34 +204,12 @@ input[type="number"] {
     }
 }
 @media (max-width: 1000px) {
-    main {
-        height: fit-content;
-        min-height: calc(var(--vh, 1vh) * 100);
-        padding: 10px 10px 50px 10px;
-    }
     .input-area {
         min-width: 300px;
     }
-    .form-title {
-        font-size: 40pt;
-        font-weight: bold;
-    }
-    .input-label {
-        font-size: 25pt;
-    }
-    .form-control-feedback {
-        line-height: 80px;
-    }
-    .table {
-        font-size: 35pt;
-    }
     .icon-option > svg {
-        width: 100px;
-        height: 100px;
-    }
-    .start-position-input,
-    .playing-time-input {
-        font-size: 20pt;
+        width: 30px;
+        height: 30px;
     }
     .modal-body {
         font-size: 4vw;
@@ -237,5 +219,8 @@ input[type="number"] {
         width: 100%;
         max-width: calc(100% - 40px);
         margin: 0 20px;
+    }
+    .btn-option {
+        margin-bottom: 5px;
     }
 }

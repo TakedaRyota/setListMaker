@@ -5,7 +5,7 @@
 $(function () {
     const $indexView = $('#form-index'); // 作成トップ
     const $musicTitleListView = $('#music-title-list-view'); // 曲名リスト
-    const $musicListTable = $('#music-list-table'); // 曲目リスト
+    const $musicListTable = $('#music-list-tbody'); // 曲目リスト
     const $musicCards = $('#music-cards'); // 曲詳細カード
     const $musicDetailView = $('#music-detail-view'); // 楽曲詳細入力
 

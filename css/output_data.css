@@ -5,12 +5,16 @@
 
 #list-table-view {
     display: none;
-    padding: 30px 20px;
+    min-width: 650px;
+    padding: 10px;
     background-color: #ffffff;
 }
+#list-table-view > * {
+    font-size: 0.2vw;
+}
 #output-title {
-    font-size: 30px;
-    font-weight: 400;
+    font-size: large;
+    font-weight: bold;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 #output-png-a {
@@ -36,12 +40,11 @@
     text-align: center;
 }
 #list-table-view table td {
-    min-width: 50px;
     border: 1px solid #000000;
     padding: 0 5px;
 }
-#list-table-view .col-width-fix {
-    width: 20%;
+#list-table-view table .music-title-td {
+    padding: 0;
 }
 #list-table-view .time-label {
     margin: 0;
@@ -83,28 +86,32 @@
 }
 #list-table-view .music-title-cell {
     min-height: 30px;
-    max-width: 30vw;
+    width: 100%;
     overflow: hidden;
     overflow-wrap: anywhere;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     font-weight: bold;
+    text-align: center;
 }
-#list-table-view .height-max {
-    height: 35px;
+#list-table-head > tr > th:nth-child(1) {
+    width: 15px;
 }
-
 #list-table-head > tr > th:nth-child(2) {
-    width: 30vw;
+    width: 50vw;
 }
 #list-table-head > tr > th:nth-child(3) {
-    width: 50px;
+    width: 30px;
 }
 #list-table-head > tr > th:nth-child(4) {
-    width: 70px;
+    width: 50px;
 }
 
-#list-row-table tr > td:nth-child(3) {
+#list-row-table tr > td:nth-child(3),
+#list-row-table tr > td:nth-child(4) {
     text-align: center;
+}
+#guide-line-table > tbody > tr {
+    height: 25px;
 }

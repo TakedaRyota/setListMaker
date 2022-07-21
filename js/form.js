@@ -139,7 +139,7 @@ $(function () {
             listTable += `
                 <tr>
                     <th>${index + 1}</th>
-                    <td>
+                    <td class="music-title-td">
                         <div class="music-title-cell">
                             ${$musicDetailEle.find('.music-title').val()}
                         </div>
