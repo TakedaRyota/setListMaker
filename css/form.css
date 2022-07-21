@@ -180,14 +180,10 @@ input[type="number"] {
 .explain-text-warning {
     background-color: yellow;
     color: #da4453;
-    font-size: 20px;
 }
 /* --- 完了ボタン --- */
 #complete-btn {
     width: 100%;
-}
-.music-time-input {
-    width: fit-content;
 }
 
 @media (min-width: 1000px) {
@@ -228,5 +224,18 @@ input[type="number"] {
     .icon-option > svg {
         width: 100px;
         height: 100px;
+    }
+    .start-position-input,
+    .playing-time-input {
+        font-size: 20pt;
+    }
+    .modal-body {
+        font-size: 4vw;
+        padding: 100px 20px;
+    }
+    .modal-dialog {
+        width: 100%;
+        max-width: calc(100% - 40px);
+        margin: 0 20px;
     }
 }

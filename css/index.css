@@ -6,6 +6,22 @@
     width: 60%;
     margin: 0 20%;
 }
-#info-area {
-    padding: 15px 20%;
+
+@media (min-width: 1000px) {
+    #info-area {
+        padding: 15px 20%;
+    }
+}
+@media (max-width: 1000px) {
+    #make-btn {
+        width: calc(100% - 30px);
+        margin: 0 15px;
+    }
+    #make-btn > span > svg {
+        min-width: 8vw;
+        min-height: 8vw;
+    }
+    #info-area {
+        padding: 0 15px;
+    }
 }

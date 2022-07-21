@@ -56,7 +56,7 @@ $(function () {
                 </div>
                 <div class="">
                     <input class="form-control mb-2 music-title" type="text" value="${musicTitle}"/>
-                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                    <span uk-icon="icon: warning" class="form-control-feedback"></span>
                 </div>
                 <div class="input-label">Track</div>
                 <div class="d-flex mb-2">
@@ -81,7 +81,7 @@ $(function () {
                 </div>
                 <div class="">
                     <textarea class="start-position-text form-control mb-2" rows="2" placeholder="音先行/板付など" required></textarea>
-                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                    <span uk-icon="icon: warning" class="form-control-feedback"></span>
                 </div>
                 <div class="input-label">音響への要望</div>
                 <textarea class="pa-request-text form-control mb-2" rows="3" placeholder=""></textarea>

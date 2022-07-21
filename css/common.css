@@ -47,6 +47,22 @@ h3 {
     width: 5vw;
     height: 5vw;
 }
+.has-error {
+    position: relative;
+}
+.has-error > .form-control-feedback {
+    display: block;
+}
+.form-control-feedback {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 0;
+}
+.form-control-feedback > svg {
+    width: 50px;
+    height: 50px;
+}
 
 @media (min-width: 1000px) {
     .form-control,
@@ -68,5 +84,8 @@ h3 {
     .btn > span > svg {
         min-width: 80px;
         min-height: 80px;
+    }
+    .explain-text {
+        font-size: 25pt;
     }
 }
