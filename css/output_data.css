@@ -45,9 +45,17 @@
 }
 #list-table-view .time-label {
     margin: 0;
+    text-align: center;
+    width: calc(100% - 50px);
 }
 #list-table-view .time-area {
+    padding: 0 5px;
     border-top: 1px solid #000000;
+    color: #ffffff;
+    background-color: #000000;
+}
+#list-table-view .time-area span {
+    font-weight: bold;
 }
 #list-table-view .other-title {
     width: fit-content;
@@ -81,6 +89,7 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+    font-weight: bold;
 }
 #list-table-view .height-max {
     height: 35px;
