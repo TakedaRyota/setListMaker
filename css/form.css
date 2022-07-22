@@ -203,9 +203,6 @@ input[type="number"] {
 .explain-text {
     font-size: 80%;
 }
-#output-view {
-    margin-top: 10px;
-}
 @media (min-width: 1000px) {
     .icon-option > svg {
         width: 50px;
