@@ -126,6 +126,9 @@ input[type="number"] {
     margin: 0;
     padding: 5px 10px;
 }
+.output-btn-area {
+    padding-top: 10px;
+}
 .output-btn-area .btn {
     width: 100%;
     margin-bottom: 10px;
@@ -190,6 +193,12 @@ input[type="number"] {
 #music-list-table > tbody > tr > td {
     padding: 0 5px;
     vertical-align: middle;
+}
+#music-list-table > thead {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    border-style: none;
 }
 .explain-text {
     font-size: 80%;
