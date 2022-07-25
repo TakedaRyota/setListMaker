@@ -48,3 +48,19 @@ function getOpenDate(date) {
 function changeDateTime(dateTime) {
     return `${dateTime.getFullYear()}/${zeroPadded(dateTime.getMonth() + 1)}/${zeroPadded(dateTime.getDate())} ${zeroPadded(dateTime.getHours())}:${zeroPadded(dateTime.getMinutes())}:00`;
 }
+
+/**
+ * 入力エラーを表示
+ * @param {*} $targetObj 
+ */
+function showInputError($targetObj) {
+    $targetObj.parent().addClass('has-error has-feedback');
+}
+
+/**
+ * 入力エラーを非表示
+ * @param {*} $targetObj 
+ */
+function hideInputError($targetObj) {
+    $targetObj.parent().removeClass('has-error has-feedback');
+}
