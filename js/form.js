@@ -64,6 +64,29 @@ $(function () {
     });
 
     /**
+     * csv出力ボタン押下時
+     */
+    $('#output-csv-btn').on('click', function () {
+        const csvData = makeOutputCsvData();
+        const bom = new Uint8Array([0xEF, 0xBB, 0xBF]); // Excelの文字化け対策
+        const blob = new Blob([bom, csvData], { type: 'text/csv' });
+        const url = (window.URL || window.webkitURL).createObjectURL(blob);
+        const a = document.getElementById('output-csv-href');
+        a.download = `セットリスト_${$('#artist-name-input').val()}.csv`;
+        a.href = url;
+        a.click();
+    });
+
+    /**
+     * メール送信ボタン押下時
+     */
+    $('#send-mail-btn').on('click', function () {
+        const subject = `セットリスト送付　${$('#artist-name-input').val()}`;
+        const body = 'はじめにpdf出力でダウンロードしてください。ダウンロードしたファイルを添付できます。こちらは削除してください。';
+        location.href = 'mailto:?subject=' + subject + '&body=' + body;
+    });
+
+    /**
      * 画像に変換
      */
     function html2image() {
@@ -116,12 +139,12 @@ $(function () {
             listTable += `
                 <tr>
                     <th>${index + 1}</th>
-                    <td>
+                    <td class="music-title-td">
                         <div class="music-title-cell">
                             ${$musicDetailEle.find('.music-title').val()}
                         </div>
-                        <div class="time-area">
-                            <span>TIME</span>
+                        <div class="time-area d-flex">
+                            <label class="time-title-label">TIME</label>
                             <label class="time-label">${$musicDetailEle.find('.music-time-input').val()}</label>
                         </div>
                     </td>
@@ -170,5 +193,20 @@ $(function () {
         $outputView.hide();
         $indexView.show();
     });
+
+    /**
+     * csvデータの生成
+     */
+    function makeOutputCsvData() {
+        let outputData = '';
+        $('#guide-line-table').children().each(function (index, trObj) {
+            let rowData = [];
+            $(trObj).children().each(function (index, thObj) {
+                rowData.push($(thObj).text());
+            });
+            outputData += rowData.join(',');
+        });
+        return outputData;
+    }
  
 });

@@ -21,11 +21,9 @@ a,
 #music-detail-view,
 #other-comment-view,
 #output-view,
+#output-csv-btn,
 .glyphicon  {
     display: none;
-}
-#music-title-form {
-    width: calc(100vw - 100px);
 }
 .save-btn {
     margin-left: auto;
@@ -40,14 +38,10 @@ a,
     transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
 }
-.list-icon > svg {
-    width: 50px;
-    height: 50px;
-}
 .input-area {
     min-width: 300px;
     padding: 10px;
-    margin: 5px;
+    margin: 5px 5px 10px 5px;
     border-radius: 5px;
     box-shadow: 1px 1px 2px 0rem gray;
 }
@@ -60,7 +54,7 @@ a,
 .form-title {
     display: block !important;
     font-weight: bold;
-    font-size: 20pt;
+    font-size: 150%;
 }
 /* --- Chrome, Safari対応 --- */
 input[type="number"]::-webkit-outer-spin-button,
@@ -76,6 +70,10 @@ input[type="number"] {
 #complete-btn {
     position: relative;
     text-align: center;
+}
+/* --- 曲追加ボタンボタン --- */
+#add-music-btn {
+    width: 100%;
 }
 /* --- 表示していることを示す --- */
 .input-area-show {
@@ -99,7 +97,7 @@ input[type="number"] {
 .detail-view-btn {
     position: relative;
     overflow-wrap: anywhere;
-    padding-right: 10px;
+    padding: 3px 20px 3px 0 !important;
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -119,29 +117,24 @@ input[type="number"] {
     background-color: orange;
     width: fit-content;
 }
-.input-number {
-    width: 150px;
-    min-width: 150px;
-}
 .badge-danger {
     background-color: #da4453 !important;
     color: #ffffff !important;
 }
 .badge-ok,
 .badge-danger {
-    margin: 5px 0;
+    margin: 0;
     padding: 5px 10px;
+}
+.output-btn-area {
+    padding-top: 10px;
 }
 .output-btn-area .btn {
     width: 100%;
     margin-bottom: 10px;
-    padding: 30px 0;
     background-color: #ffffff;
     border-color: #15b60d;
     color: #15b60d;
-}
-.plus-circle {
-    min-width: 18px;
 }
 /* --- 横スクロール --- */
 .scroll-area {
@@ -169,9 +162,11 @@ input[type="number"] {
 }
 .setting-btn-area {
     text-align: center;
+    margin-bottom: 10px;
 }
 .btn-option {
-    display: inline-block;
+    width: 100%;
+    height: 100%;
     background-color: #ffffff;
     border-radius: 10px;
     border: 1px solid #15b60d;
@@ -182,107 +177,59 @@ input[type="number"] {
 .explain-text > .badge-ok {
     visibility: visible;
 }
-
+.explain-text-warning {
+    background-color: yellow;
+    color: #da4453;
+}
+/* --- 完了ボタン --- */
+#complete-btn {
+    width: 100%;
+}
+.panel {
+    height: calc(100vh - 250px);
+    overflow: scroll;
+}
+#music-list-table > thead > tr > th,
+#music-list-table > tbody > tr > td {
+    padding: 0 5px;
+    vertical-align: middle;
+}
+#music-list-table > thead {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    border-style: none;
+}
+.explain-text {
+    font-size: 80%;
+}
 @media (min-width: 1000px) {
-    main {
-        min-height: calc(var(--vh, 1vh) * 100);
-        padding: 10px 10px 50px 10px;
-    }
     .icon-option > svg {
         width: 50px;
         height: 50px;
     }
     .btn-option {
-        width: 30vw;
-        height: 70vh;
-        text-align: center;
-        margin: 10px;
-    }
-    /* --- 完了ボタン --- */
-    #complete-btn {
-        width: 100%;
-        height: 60px;
-        font-size: 30px;
-    }
-    #complete-btn > span > svg {
-        width: 40px;
-        height: 40px;
-    }
-    /* --- 説明文 --- */
-    .explain-text {
-        padding: 0 0 0 10px;
+        height: 60vh;
     }
 }
 @media (max-width: 1000px) {
-    main {
-        height: fit-content;
-        min-height: calc(var(--vh, 1vh) * 100);
-        padding: 10px 10px 50px 10px;
-    }
     .input-area {
         min-width: 300px;
     }
-    .form-title {
-        font-size: 40pt;
-        font-weight: bold;
-    }
-    .form-control {
-        min-height: 80px;
-        font-size: 25pt;
-    }
-    .btn-plus,
-    .btn-minus,
-    #add-music-btn {
-        width: 80px;
-        height: 80px;
-    }
-    .input-label {
-        font-size: 20pt;
-    }
-    .form-control-feedback {
-        line-height: 80px;
-    }
-    .table {
-        font-size: 35pt;
-    }
-    .btn > span > svg {
-        width: 50px;
-        height: 50px;
-    }
-    .badge-ok,
-    .badge-danger {
-        font-size: 20pt;
-    }
     .icon-option > svg {
-        width: 100px;
-        height: 100px;
+        width: 30px;
+        height: 30px;
+    }
+    .modal-body {
+        font-size: 4vw;
+        padding: 100px 20px;
+    }
+    .modal-dialog {
+        width: 100%;
+        max-width: calc(100% - 40px);
+        margin: 0 20px;
     }
     .btn-option {
-        min-width: calc(50vw - 33px);
-        width: calc(50vw - 33px);
-        min-height: 33vh;
-        height: fit-content;
-        margin: 10px;
-        text-align: center;
+        margin-bottom: 5px;
     }
-    .btn-option p {
-        font-size: 30pt;
-    }
-    /* --- 完了ボタン --- */
-    #complete-btn {
-        width: calc(100% - 20px);
-        height: 150px;
-        margin: 10px 10px;
-        font-size: 80px;
-    }
-    #complete-btn > span > svg {
-        width: 80px;
-        height: 80px;
-    }
-    /* --- 説明文 --- */
-    .explain-text {
-        font-size: 25pt;
-        padding: 0 0 0 10px;
-    }
-    
 }

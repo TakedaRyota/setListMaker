@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <title>セットリストメーカー</title>
+    <!--このファイルはフォーム入力画面-->
+    <!--ファビコン-->
+    <link rel="icon" href="./favicon.ico">
+    <!--このファイルはトップ画面のみ-->
+    <script src="./lib/js/jquery-3.6.0.min.js"></script>
+    <script src="./lib/js/icheck.min.js"></script>
+    <script src="./lib/js/jquery.fs.selecter.min.js"></script>
+    <script src="./lib/js/jquery.fs.stepper.min.js"></script>
+    <script src="./lib/js/bootstrap.min.js"></script>
+    <script src="./lib/js/uikit.min.js"></script>
+    <script src="./lib/js/uikit-icons.min.js"></script>
+    <script src="./lib/js/jspdf.umd.min.js"></script>
+    <script src="./lib/js/html2canvas.min.js"></script>
+    <script src="./lib/js/html2pdf.min.js"></script>
+    <script src="./lib/js/html2pdf.bundle.min.js"></script>
+
+    <!-- 画面ごとのjs -->
+    <script src="./js/common.js"></script>
+    <script src="./js/form.js"></script>
+    <script src="./js/form_top.js"></script>
+    <script src="./js/list_form.js"></script>
+    <script src="./js/comment_form.js"></script>
+    <!-- スタイルシートはココに入れる -->
+    <link rel="stylesheet" type="text/css" href="./lib/css/uikit.min.css">
+    <link rel="stylesheet" type="text/css" href="./lib/css/uikit-rtl.min.css">
+    <link rel="stylesheet" type="text/css" href="./lib/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./lib/css/bootflat.min.css">
+    
+    <!-- 画面ごとのCSS -->
+    <link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/form.css">
+    <link rel="stylesheet" type="text/css" href="./css/output_data.css">
+</head>
+<body>    
+    <main>
+        <!-- メイン画面 -->
+        <div id="form-index">
+            <div class="form-title">セットリストの作成</div>
+            <!-- 設定項目ボタン -->
+            <div class="setting-btn-area container">
+                <div class="row mb-2">
+                    <div class="col-md-4 mb-1">
+                        <button id="open-form-top-btn" class="btn btn-success btn-option col-4">
+                            <div uk-icon="icon: info" class="icon-option"></div>
+                            <div class="form-title">概要入力
+                                <span class="badge badge-danger">必須</span>
+                            </div>
+                            <div class="badge badge-ok">OK</div>
+                        </button>
+                    </div>
+                    <div class="col-md-4 mb-1">
+                        <button id="open-music-title-form" class="btn btn-success btn-option col-4">
+                            <div uk-icon="icon: list" class="icon-option"></div>
+                            <div class="form-title">セットリスト入力
+                                <span class="badge badge-danger">必須</span>
+                            </div>
+                            <div class="badge badge-ok">OK</div>
+                        </button>
+                    </div>
+                    <div class="col-md-4">
+                        <button id="other-form-btn" class="btn btn-success btn-option col-4">
+                            <div uk-icon="icon: comment" class="icon-option"></div>
+                            <div class="form-title">その他入力</div>
+                            <div class="badge badge-ok">OK</div>
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <button id="complete-btn" class="btn btn-warning mb-2">
+                            <span uk-icon="icon: forward" class="me-2"></span>完了
+                        </button>
+                        <div class="explain-text d-flex">
+                            各入力に
+                            <span class="badge badge-ok">OK</span>
+                            が表示されたら、完了できます。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 概要フォーム -->
+        <div id="form-top-view">
+            <div class="form-title">概要入力フォーム</div>
+            <div class="container">
+                <div class="input-area bg-light">
+                    <div class="input-label">イベント名</div>
+                    <input id="event-title-input" class="form-control mb-2" type="text" placeholder="イベント名/催事名"/>
+                    <div class="input-label">会場名</div>
+                    <input id="event-place-input" class="form-control mb-2" type="text" placeholder="会場名"/>
+                    <div class="input-label">出演日</div>
+                    <input id="calendar" class="form-control mb-2" type="date"/>
+                    <div class="input-label">アーティスト名
+                        <span class="badge badge-danger">必須</span>
+                    </div>
+                    <div class="">
+                        <input id="artist-name-input" class="form-control mb-2" type="text">
+                        <span uk-icon="icon: warning" class="form-control-feedback"></span>
+                    </div>
+                    <div class="input-label">演奏時間
+                        <span class="badge badge-danger">必須</span>
+                    </div>
+                    <div class="scroll-area">
+                        <div class="d-flex mb-2">
+                            <button class="playing-time-input me-2">10分</button>
+                            <button class="playing-time-input me-2">15分</button>
+                            <button class="playing-time-input me-2">20分</button>
+                            <button class="playing-time-input me-2">25分</button>
+                            <button class="playing-time-input me-2">30分</button>
+                            <button class="playing-time-input me-2">35分</button>
+                            <button class="playing-time-input me-2">40分</button>
+                        </div>
+                    </div>
+                    <div class="">
+                        <input id="playing-total-time-input" class="form-control mb-2" type="text"/>
+                        <span uk-icon="icon: warning" class="form-control-feedback"></span>
+                    </div>
+                    
+                    <div class="input-label">メンバー数</div>
+                    <div class="d-flex mb-2">
+                        <button class="btn btn-minus" type="button">
+                            <span uk-icon="icon: minus"></span>
+                        </button>
+                        <input id="member-num-input" class="form-control input-number" type="number" value="0" min="0" max="100"/>
+                        <button class="btn btn-plus" type="button">
+                            <span uk-icon="icon: plus"></span>
+                        </button>
+                    </div>
+                    <div class="input-label">マイク使用本数</div>
+                    <div class="d-flex mb-2">
+                        <button class="btn btn-normal btn-minus" type="button">
+                            <span uk-icon="icon: minus"></span>
+                        </button>
+                        <input id="mic-num-input" class="form-control input-number" type="number" value="0" min="0" max="100"/>
+                        <button class="btn btn-normal btn-plus" type="button">
+                            <span uk-icon="icon: plus"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <button id="form-top-back-btn" class="btn btn-success" type="button">
+                        <span uk-icon="icon: arrow-left"></span>戻る
+                    </button>
+                    <button id="form-top-save-btn" class="save-btn btn btn-success" type="button">
+                        <span uk-icon="icon: check"></span>保存
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- 曲リストフォーム -->
+        <div id="music-title-list-view">
+            <div class="form-title">曲順リスト</div>
+            <div class="container">
+                <div class="explain-text-warning explain-text">リスト順（MC,SE等込み）に追加してください。</div>
+                <div class="">
+                    <input type="text" id="music-title-form" class="form-control" placeholder="曲のタイトル,MC,SE"/>
+                    <span uk-icon="icon: warning" class="form-control-feedback"></span>
+                </div>
+                <div class="text-center">
+                    <button type="button" id="add-music-btn" class="btn btn-danger mb-2">
+                        <span uk-icon="icon: plus-circle" class="plus-circle"></span>曲の追加
+                    </button>
+                </div>
+                
+                <!-- 曲目リスト -->
+                <div id="set-list-view">
+                    <div class="panel panel-default mb-2">
+                        <table id="music-list-table" class="table table-striped table-hover table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="no-head">#</th>
+                                    <th>タイトル</th>
+                                </tr>
+                            </thead>
+                            <tbody id="music-list-tbody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <button id="set-list-back-btn" class="btn btn-success" type="button">
+                        <span uk-icon="icon: arrow-left"></span>戻る
+                    </button>
+                    <button id="set-list-save-btn" class="save-btn btn btn-success">
+                        <span uk-icon="icon: check"></span>保存
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- 曲詳細フォーム -->
+        <form id="music-detail-view">
+            <div class="form-title">曲詳細入力フォーム</div>
+            <div class="container">
+                <div id="music-cards">
+                </div>
+                <div class="d-flex">
+                    <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#delete-cfm-modal">
+                        <span uk-icon="icon: trash"></span>削除
+                    </button>
+                    <button id="detail-save-btn" class="save-btn btn btn-success" type="button">
+                        <span uk-icon="icon: check"></span>保存
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <!-- その他備考記載欄 -->
+        <div id="other-comment-view">
+            <div class="form-title">その他自由記載欄</div>
+            <div class="container">
+                <textarea id="other-comment-input" class="form-control" rows="6" placeholder="ご自由に入力してください。"></textarea>
+                <div class="explain-text mb-2">※無記入でも保存できます。</div>
+                <div class="d-flex">
+                    <button id="detail-back-btn" class="btn btn-success" type="button">
+                        <span uk-icon="icon: arrow-left"></span>戻る
+                    </button>
+                    <button id="other-comment-save-btn" class="save-btn btn btn-success">
+                        <span uk-icon="icon: check"></span>保存
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 完了画面 -->
+        <div id="output-view">
+            <div class="output-btn-area container">
+                <div class="row">
+                    <div class="col-md-12 mb-2">
+                        <!-- プレビュー画像の表示 -->
+                        <img id="preview-img" src=""/>
+                        <div class="explain-text">※プレビューを長押しで画像として保存できます。</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <button id="output-pdf-btn" class="btn btn-outline-success">
+                            <span uk-icon="icon: file-pdf"></span>pdf出力
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button id="send-mail-btn" class="btn btn-outline-success">
+                            <span uk-icon="icon: mail"></span>電子メール
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <button id="output-csv-btn" class="btn btn-outline-success">
+                            <span uk-icon="icon: file-text"></span>csv出力
+                        </button>
+                        <a id="output-csv-href" style="display: none;"></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <button id="back-edit-btn" class="btn btn-outline-success">
+                            <span uk-icon="icon: pencil"></span>編集に戻る
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button id="back-home-btn" class="btn btn-outline-success" onclick="location.href='./index.html'">
+                            <span uk-icon="icon: home"></span>HOME
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- セットリスト完成系 -->
+        <div id="list-table-view">
+            <div id="output-title" class="text-center">SET LIST</div>
+            <div class="text-end">
+                <span>出力日:</span>
+                <span id="output-date"></span>
+            </div>
+            <table id="guide-line-table" class="mb-2">
+                <tbody>
+                    <tr>
+                        <th class="col-width-fix">イベント名</th>
+                        <td id="event-title-cell" colspan="5"></td>
+                    </tr>
+                    <tr>
+                        <th class="col-width-fix">会場</th>
+                        <td id="event-place-cell" colspan="2"></td>
+                        <th>出演日</th>
+                        <td id="event-date-cell" class="event-date" colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <th class="col-width-fix height-max">アーティスト名</th>
+                        <td id="artist-name-cell" colspan="5"></td>
+                    </tr>
+                    <tr>
+                        <th class="col-width-fix">メンバー数</th>
+                        <td id="member-num-cell"></td>
+                        <th class="title-cel-width">マイク本数</th>
+                        <td id="mic-num-cell"></td>
+                        <th class="title-cel-width">演奏時間</th>
+                        <td id="playing-time-cell"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table id="list-table" class="mb-2">
+                <thead id="list-table-head">
+                    <tr>
+                        <th>#</th>
+                        <th>タイトル</th>
+                        <th>track</th>
+                        <th>キッカケ</th>
+                        <th>音響への要望</th>
+                        <th>照明への要望</th>
+                    </tr>
+                </thead>
+                <tbody id="list-row-table">
+                </tbody>
+            </table>
+
+            <div class="other-title">その他</div>
+            <div id="other-comment-cell" class="other-text-area"></div>
+
+            <!-- Copyrights -->
+            <div class="text-center mt-3">This form is created by SET LIST MAKER.</div>
+
+        </div>
+
+        <!-- 削除確認モーダル -->
+        <div class="modal fade" id="delete-cfm-modal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-sm modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">確認</h5>
+                    </div>
+                    <div class="modal-body">
+                        本当に削除してよろしいですか？
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            <span uk-icon="icon: close"></span>キャンセル
+                        </button>
+                        <button id="detail-delete-btn" type="button" class="btn btn-danger">
+                            <span uk-icon="icon: trash"></span>削除
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- version情報 -->
+    <div class="version-area">
+        <span>ver.</span>
+        <span class="version-info"></span>
+    </div>
+    <footer class="copyrights">copyright@Set List Maker</footer>
+</body>
+</html>

@@ -5,7 +5,7 @@
 $(function () {
     const $indexView = $('#form-index'); // 作成トップ
     const $musicTitleListView = $('#music-title-list-view'); // 曲名リスト
-    const $musicListTable = $('#music-list-table'); // 曲目リスト
+    const $musicListTable = $('#music-list-tbody'); // 曲目リスト
     const $musicCards = $('#music-cards'); // 曲詳細カード
     const $musicDetailView = $('#music-detail-view'); // 楽曲詳細入力
 
@@ -56,7 +56,7 @@ $(function () {
                 </div>
                 <div class="">
                     <input class="form-control mb-2 music-title" type="text" value="${musicTitle}"/>
-                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                    <span uk-icon="icon: warning" class="form-control-feedback"></span>
                 </div>
                 <div class="input-label">Track</div>
                 <div class="d-flex mb-2">
@@ -76,12 +76,13 @@ $(function () {
                     <span class="badge badge-danger">必須</span>
                 </div>
                 <div class="d-flex mb-2">
-                    <button class="start-position-input me-2" disabled>音先行</button>
-                    <button class="start-position-input" disabled>板付</button>
+                    <button class="start-position-input me-2" type="button">音先行</button>
+                    <button class="start-position-input me-2" type="button">板付</button>
+                    <button class="start-position-input" type="button">おまかせ</button>
                 </div>
                 <div class="">
                     <textarea class="start-position-text form-control mb-2" rows="2" placeholder="音先行/板付など" required></textarea>
-                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                    <span uk-icon="icon: warning" class="form-control-feedback"></span>
                 </div>
                 <div class="input-label">音響への要望</div>
                 <textarea class="pa-request-text form-control mb-2" rows="3" placeholder=""></textarea>
@@ -119,6 +120,19 @@ $(function () {
     });
 
     /**
+     * 曲削除ボタン押下時
+     */
+    $('#detail-delete-btn').on('click', function () {
+        const $showListObj = $('.input-area-show');
+        const listId = $showListObj.attr('data-list-id');
+        $showListObj.remove();
+        $(`#set-list-title-${listId}`).parent().parent().remove();
+        $musicDetailView.hide();
+        $musicTitleListView.show();
+        $('#delete-cfm-modal').modal('hide');
+    });
+
+    /**
      * フォームのエラーチェック
      * @returns {Boolean}
      */
@@ -141,6 +155,7 @@ $(function () {
         }
         return isError;
     }
+
     /**
      * 音先行ボタン押下時
      */

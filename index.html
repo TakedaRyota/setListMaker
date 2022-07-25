@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="description" content="セットリスト作成ツールです。EXCELいらずでスマホで作成できるのが特徴です。画像やpdfで保存ができます。">
+    <title>セットリストメーカー</title>
+    <!--ファビコン-->
+    <link rel="icon" href="./favicon.ico">
+    <!--このファイルはトップ画面のみ-->
+    <script src="./lib/js/jquery-3.6.0.min.js"></script>
+    <script src="./lib/js/bootstrap.min.js"></script>
+    <script src="./lib/js/uikit.min.js"></script>
+    <script src="./lib/js/uikit-icons.min.js"></script>
+    <script src="./lib/js/icheck.min.js"></script>
+    <script src="./lib/js/jquery.fs.selecter.min.js"></script>
+    <script src="./lib/js/jquery.fs.stepper.min.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/index.js"></script>
+    <!-- スタイルシートはココに入れる -->
+    <link rel="stylesheet" type="text/css" href="./lib/css/uikit.min.css">
+    <link rel="stylesheet" type="text/css" href="./lib/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./lib/css/bootflat.min.css">
+    <!-- 画面ごとのCSS -->
+    <link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+
+    
+</head>
+<body>    
+    <main>
+        <div id="top-page" class="container">
+            <div id="title-area" class="mb-3">
+                <img src="./image/top_image.png" alt="トップイメージ">
+            </div>
+            <button id="make-btn" class="btn btn-info" onclick="location.href='./form.html'"><span uk-icon="pencil"></span>作成する</button>
+            <!-- 情報エリア -->
+            <div id="info-area">
+                <h3>お知らせ</h3>
+                <ul>
+                    <li>2022.07.22 サービス運用開始しました。</li>
+                </ul>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>作成手順</h3>
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                <div class="ms-2 me-auto">
+                                    <div class="fw-bold">概要入力</div>
+                                    イベント概要、アーティスト情報の入力
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                <div class="ms-2 me-auto">
+                                    <div class="fw-bold">セットリスト入力</div>
+                                    楽曲情報、音響の要望、照明の要望などの入力
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                <div class="ms-2 me-auto">
+                                    <div class="fw-bold">その他入力</div>
+                                    その他、特記事項などの入力
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                <div class="ms-2 me-auto">
+                                    <div class="fw-bold">完了（出力）</div>
+                                    画像、pdf形式で保存ができます。
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>出力イメージ</h3>
+                        <img alt="Sample" src="./image/Sample.PNG"/>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+    <div class="version-area">
+        <span>ver.</span>
+        <span class="version-info"></span>
+    </div>
+    <footer>
+        <div class="copyrights">copyright@Set List Maker</div>
+    </footer>
+</body>
+</html>
