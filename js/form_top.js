@@ -41,15 +41,15 @@ $(function () {
         const $totalTime = $('#playing-total-time-input');
         if ($artistName.val() == '') {
             isError = true;
-            $artistName.parent().addClass('has-error has-feedback');
+            showInputError($artistName);
         } else {
-            $artistName.parent().removeClass('has-error has-feedback');
+            hideInputError($artistName);
         }
         if ($totalTime.val() == '') {
             isError = true;
-            $totalTime.parent().addClass('has-error has-feedback');
+            showInputError($totalTime);
         } else {
-            $totalTime.parent().removeClass('has-error has-feedback');
+            hideInputError($totalTime);
         }
         return isError;
     }

@@ -47,7 +47,7 @@
             <div class="setting-btn-area container">
                 <div class="row mb-2">
                     <div class="col-md-4 mb-1">
-                        <button id="open-form-top-btn" class="btn btn-success btn-option col-4">
+                        <button id="open-form-top-btn" class="btn btn-success btn-option col-4" type="button">
                             <div uk-icon="icon: info" class="icon-option"></div>
                             <div class="form-title">概要入力
                                 <span class="badge badge-danger">必須</span>
@@ -56,7 +56,7 @@
                         </button>
                     </div>
                     <div class="col-md-4 mb-1">
-                        <button id="open-music-title-form" class="btn btn-success btn-option col-4">
+                        <button id="open-music-title-form" class="btn btn-success btn-option col-4" type="button">
                             <div uk-icon="icon: list" class="icon-option"></div>
                             <div class="form-title">セットリスト入力
                                 <span class="badge badge-danger">必須</span>
@@ -65,7 +65,7 @@
                         </button>
                     </div>
                     <div class="col-md-4">
-                        <button id="other-form-btn" class="btn btn-success btn-option col-4">
+                        <button id="other-form-btn" class="btn btn-success btn-option col-4" type="button">
                             <div uk-icon="icon: comment" class="icon-option"></div>
                             <div class="form-title">その他入力</div>
                             <div class="badge badge-ok">OK</div>
@@ -74,7 +74,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <button id="complete-btn" class="btn btn-warning mb-2">
+                        <button id="complete-btn" class="btn btn-warning mb-2" type="button">
                             <span uk-icon="icon: forward" class="me-2"></span>完了
                         </button>
                         <div class="explain-text d-flex">
@@ -90,7 +90,7 @@
         <!-- 概要フォーム -->
         <div id="form-top-view">
             <div class="form-title">概要入力フォーム</div>
-            <div class="container">
+            <div class="container container-max-width">
                 <div class="input-area bg-light">
                     <div class="input-label">イベント名</div>
                     <input id="event-title-input" class="form-control mb-2" type="text" placeholder="イベント名/催事名"/>
@@ -110,13 +110,13 @@
                     </div>
                     <div class="scroll-area">
                         <div class="d-flex mb-2">
-                            <button class="playing-time-input me-2">10分</button>
-                            <button class="playing-time-input me-2">15分</button>
-                            <button class="playing-time-input me-2">20分</button>
-                            <button class="playing-time-input me-2">25分</button>
-                            <button class="playing-time-input me-2">30分</button>
-                            <button class="playing-time-input me-2">35分</button>
-                            <button class="playing-time-input me-2">40分</button>
+                            <button class="playing-time-input me-2" type="button">10分</button>
+                            <button class="playing-time-input me-2" type="button">15分</button>
+                            <button class="playing-time-input me-2" type="button">20分</button>
+                            <button class="playing-time-input me-2" type="button">25分</button>
+                            <button class="playing-time-input me-2" type="button">30分</button>
+                            <button class="playing-time-input me-2" type="button">35分</button>
+                            <button class="playing-time-input me-2" type="button">40分</button>
                         </div>
                     </div>
                     <div class="">
@@ -160,7 +160,7 @@
         <!-- 曲リストフォーム -->
         <div id="music-title-list-view">
             <div class="form-title">曲順リスト</div>
-            <div class="container">
+            <div class="container container-max-width">
                 <div class="explain-text-warning explain-text">リスト順（MC,SE等込み）に追加してください。</div>
                 <div class="">
                     <input type="text" id="music-title-form" class="form-control" placeholder="曲のタイトル,MC,SE"/>
@@ -191,7 +191,7 @@
                     <button id="set-list-back-btn" class="btn btn-success" type="button">
                         <span uk-icon="icon: arrow-left"></span>戻る
                     </button>
-                    <button id="set-list-save-btn" class="save-btn btn btn-success">
+                    <button id="set-list-save-btn" class="save-btn btn btn-success" type="button">
                         <span uk-icon="icon: check"></span>保存
                     </button>
                 </div>
@@ -202,7 +202,7 @@
         <!-- 曲詳細フォーム -->
         <form id="music-detail-view">
             <div class="form-title">曲詳細入力フォーム</div>
-            <div class="container">
+            <div class="container container-max-width">
                 <div id="music-cards">
                 </div>
                 <div class="d-flex">
@@ -219,14 +219,14 @@
         <!-- その他備考記載欄 -->
         <div id="other-comment-view">
             <div class="form-title">その他自由記載欄</div>
-            <div class="container">
+            <div class="container container-max-width">
                 <textarea id="other-comment-input" class="form-control" rows="6" placeholder="ご自由に入力してください。"></textarea>
                 <div class="explain-text mb-2">※無記入でも保存できます。</div>
                 <div class="d-flex">
                     <button id="detail-back-btn" class="btn btn-success" type="button">
                         <span uk-icon="icon: arrow-left"></span>戻る
                     </button>
-                    <button id="other-comment-save-btn" class="save-btn btn btn-success">
+                    <button id="other-comment-save-btn" class="save-btn btn btn-success" type="button">
                         <span uk-icon="icon: check"></span>保存
                     </button>
                 </div>
@@ -235,7 +235,7 @@
 
         <!-- 完了画面 -->
         <div id="output-view">
-            <div class="output-btn-area container">
+            <div class="output-btn-area container container-max-width">
                 <div class="row">
                     <div class="col-md-12 mb-2">
                         <!-- プレビュー画像の表示 -->
@@ -245,19 +245,19 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <button id="output-pdf-btn" class="btn btn-outline-success">
+                        <button id="output-pdf-btn" class="btn btn-outline-success" type="button">
                             <span uk-icon="icon: file-pdf"></span>pdf出力
                         </button>
                     </div>
                     <div class="col-md-6">
-                        <button id="send-mail-btn" class="btn btn-outline-success">
+                        <button id="send-mail-btn" class="btn btn-outline-success" type="button">
                             <span uk-icon="icon: mail"></span>電子メール
                         </button>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <button id="output-csv-btn" class="btn btn-outline-success">
+                        <button id="output-csv-btn" class="btn btn-outline-success" type="button">
                             <span uk-icon="icon: file-text"></span>csv出力
                         </button>
                         <a id="output-csv-href" style="display: none;"></a>
@@ -265,12 +265,12 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <button id="back-edit-btn" class="btn btn-outline-success">
+                        <button id="back-edit-btn" class="btn btn-outline-success" type="button">
                             <span uk-icon="icon: pencil"></span>編集に戻る
                         </button>
                     </div>
                     <div class="col-md-6">
-                        <button id="back-home-btn" class="btn btn-outline-success" onclick="location.href='./index.html'">
+                        <button id="back-home-btn" class="btn btn-outline-success" type="button"  data-bs-toggle="modal" data-bs-target="#home-cfm-modal">
                             <span uk-icon="icon: home"></span>HOME
                         </button>
                     </div>
@@ -356,12 +356,40 @@
                 </div>
             </div>
         </div>
+
+        <!-- HOME確認モーダル -->
+        <div class="modal fade" id="home-cfm-modal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-sm modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">確認</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div>HOMEに戻りますか？</div>
+                        <div class="fw-bold text-danger">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+                                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                            </svg>
+                            データが失われますがよろしいですか？
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            <span uk-icon="icon: close"></span>キャンセル
+                        </button>
+                        <button type="button" class="btn btn-success" onclick="location.href='./index.html'">
+                            <span uk-icon="icon: star"></span>はい
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <!-- version情報 -->
     <div class="version-area">
         <span>ver.</span>
         <span class="version-info"></span>
     </div>
-    <footer class="copyrights">copyright@Set List Maker</footer>
+    <footer class="copyrights">copyright@SET LIST MAKER</footer>
 </body>
 </html>

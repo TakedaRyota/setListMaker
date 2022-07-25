@@ -143,15 +143,15 @@ $(function () {
 
         if ($textObj.val() == '') {
             isError = true;
-            $textObj.parent().addClass('has-error has-feedback');
+            showInputError($textObj);
         } else {
-            $textObj.parent().removeClass('has-error has-feedback');
+            hideInputError($textObj);
         }
         if ($titleObj.val() == '') {
             isError = true;
-            $titleObj.parent().addClass('has-error has-feedback');
+            showInputError($titleObj);
         } else {
-            $titleObj.parent().removeClass('has-error has-feedback');
+            hideInputError($titleObj);
         }
         return isError;
     }

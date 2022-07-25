@@ -220,10 +220,6 @@ input[type="number"] {
         width: 30px;
         height: 30px;
     }
-    .modal-body {
-        font-size: 4vw;
-        padding: 100px 20px;
-    }
     .modal-dialog {
         width: 100%;
         max-width: calc(100% - 40px);
