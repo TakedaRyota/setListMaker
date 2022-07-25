@@ -186,8 +186,8 @@ input[type="number"] {
     width: 100%;
 }
 .panel {
-    height: calc(100vh - 250px);
-    overflow: scroll;
+    height: calc(var(--vh, 1vh) * 100 - 250px);
+    overflow-y: scroll;
 }
 #music-list-table > thead > tr > th,
 #music-list-table > tbody > tr > td {
