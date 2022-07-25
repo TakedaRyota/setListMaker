@@ -71,7 +71,7 @@ $(function () {
                 <div class="input-label">TIME
                     <span class="badge badge-danger">必須</span>
                 </div>
-                <input class="music-time-input form-control mb-2" type="time" min="00:00" max="59:59"/>
+                <input class="music-time-input form-control mb-2" type="time" value="00:00" min="00:00" max="59:59"/>
                 <div class="input-label">キッカケ
                     <span class="badge badge-danger">必須</span>
                 </div>
