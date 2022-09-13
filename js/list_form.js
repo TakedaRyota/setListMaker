@@ -27,6 +27,16 @@ $(function () {
     });
 
     /**
+     * 曲追加フォームでエンターキー押下時の処理
+     */
+    $('#music-title-form').keypress(function(e) {
+        if (e.code == 'Enter') {
+            $('#add-music-btn').click();
+            return false;
+        }
+    })
+
+    /**
      * リスト追加ボタン押下時
      */
     $('#add-music-btn').on('click', function () {
