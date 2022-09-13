@@ -87,7 +87,6 @@ $(function () {
                 </div>
                 <div class="scroll-area">
                     <div class="d-flex mb-2">
-                        <button class="start-position-input me-2" type="button">なし</button>
                         <button class="start-position-input me-2" type="button">音先</button>
                         <button class="start-position-input me-2" type="button">板付</button>
                         <button class="start-position-input me-2" type="button">曲ふり</button>
@@ -175,6 +174,6 @@ $(function () {
      * 音先行ボタン押下時
      */
     $musicCards.on('click', '.start-position-input', function () {
-        $(this).parent().parent().find('.start-position-text').text($(this).text());
+        $(this).parent().parent().parent().find('.start-position-text').text($(this).text());
     });
 });
