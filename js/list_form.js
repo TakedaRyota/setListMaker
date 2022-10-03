@@ -85,13 +85,14 @@ $(function () {
                 <div class="input-label">キッカケ
                     <span class="badge badge-danger">必須</span>
                 </div>
-                <div class="d-flex mb-2">
-                    <button class="start-position-input me-2" type="button">なし</button>
-                    <button class="start-position-input me-2" type="button">音先</button>
-                    <button class="start-position-input me-2" type="button">板付</button>
-                    <button class="start-position-input me-2" type="button">曲ふり</button>
-                    <button class="start-position-input me-2" type="button">タイトルコール</button>
-                    <button class="start-position-input me-2" type="button">カウント</button>
+                <div class="scroll-area">
+                    <div class="d-flex mb-2">
+                        <button class="start-position-input me-2" type="button">音先</button>
+                        <button class="start-position-input me-2" type="button">板付</button>
+                        <button class="start-position-input me-2" type="button">曲ふり</button>
+                        <button class="start-position-input me-2" type="button">タイトルコール</button>
+                        <button class="start-position-input me-2" type="button">カウント</button>
+                    </div>
                 </div>
                 <div class="">
                     <textarea class="start-position-text form-control mb-2" rows="2" placeholder="音先行/板付など" required></textarea>
@@ -173,6 +174,6 @@ $(function () {
      * 音先行ボタン押下時
      */
     $musicCards.on('click', '.start-position-input', function () {
-        $(this).parent().parent().find('.start-position-text').text($(this).text());
+        $(this).parent().parent().parent().find('.start-position-text').text($(this).text());
     });
 });
