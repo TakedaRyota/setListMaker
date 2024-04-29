@@ -138,13 +138,15 @@ $(function () {
             const $musicDetailEle = $(ele);
             listTable += `
                 <tr>
-                    <th>${index + 1}</th>
+                    <th class="border-bottom">${index + 1}</th>
                     <td class="music-title-td">
                         <div class="music-title-cell">
+                            <div class="music-title-cell-center">
                             ${$musicDetailEle.find('.music-title').val()}
+                            </div>
                         </div>
                         <div class="time-area d-flex">
-                            <label class="time-title-label">TIME</label>
+                            <label class="time-title-label border-left">TIME</label>
                             <label class="time-label">${$musicDetailEle.find('.music-time-input').val()}</label>
                         </div>
                     </td>

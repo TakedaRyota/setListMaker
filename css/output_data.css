@@ -48,7 +48,7 @@
 }
 #list-table-view table td {
     border: 1px solid #000000;
-    padding: 0 5px;
+    padding: 5px;
 }
 #list-table-view table .music-title-td {
     padding: 0;
@@ -75,8 +75,8 @@
 }
 #list-table-view .other-text-area {
     width: 100%;
-    min-height: 50px;
-    padding: 0 5px;
+    min-height: 100px;
+    padding: 5px;
     background-color: #ffffff;
     border: 1px solid #000000;
 }
@@ -88,13 +88,22 @@
 }
 #event-title-cell,
 #artist-name-cell {
-    height: 40px;
-    font-size: large;
+    height: 30px;
+    font-size: 40px;
     font-weight: bold;
     padding: 20px;
 }
+#event-place-cell,
+#event-date-cell,
+#member-num-cell,
+#mic-num-cell,
+#playing-time-cell {
+    font-size: 25px;
+    padding: 5px;
+    line-height: 1.3rem;
+}
 #list-table-view .music-title-cell {
-    min-height: 30px;
+    min-height: 40px;
     width: 100%;
     overflow: hidden;
     overflow-wrap: anywhere;
@@ -103,6 +112,16 @@
     -webkit-line-clamp: 2;
     font-weight: bold;
     text-align: center;
+    position: relative;
+}
+#list-table-view .music-title-cell-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    line-height: 1rem;
+    width: 100%;
 }
 #list-table-head > tr > th:nth-child(1) {
     width: 20px;
@@ -132,4 +151,16 @@
 }
 #guide-line-table > tbody > tr {
     height: 25px;
+}
+.border-top {
+    border-top: 1px solid #ffffff;
+}
+.border-bottom {
+    border-bottom: 1px solid #ffffff;
+}
+.border-right {
+    border-right: 1px solid #ffffff;
+}
+.border-left {
+    border-left: 1px solid #ffffff;
 }
