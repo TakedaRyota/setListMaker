@@ -146,7 +146,7 @@ $(function () {
                             </div>
                         </div>
                         <div class="time-area d-flex">
-                            <label class="time-title-label">TIME</label>
+                            <label class="time-title-label border-left">TIME</label>
                             <label class="time-label">${$musicDetailEle.find('.music-time-input').val()}</label>
                         </div>
                     </td>
